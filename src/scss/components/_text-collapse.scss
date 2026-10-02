@@ -1,0 +1,112 @@
+@use '../utils' as *;
+
+.text-collapse {
+
+    &__content {
+        overflow: hidden;
+        max-height: rem(228);
+        transition: max-height .3s ease;
+
+        p {
+            margin-bottom: rem(12);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    &__control {
+        margin-top: rem(14);
+    }
+
+    &.open {
+
+        .text-collapse__content {
+            max-height: rem(3000);
+            -webkit-line-clamp: 6000;
+        }
+
+    }
+
+    @include media-up('md') {
+
+        &__content {
+            max-height: rem(124);
+            font-size: rem(14);
+            line-height: rem(20);
+        }
+    }
+
+    @include media-up('xl') {
+
+        &__content {
+            font-size: rem(16);
+            line-height: rem(20);
+        }
+
+        &__control {
+            margin-top: rem(20);
+        }
+
+
+        [data-collapse-control] {
+
+            i {
+                height: rem(24);
+            }
+        }
+    }
+}
+
+[data-collapse] {
+
+    &.open {
+
+        [data-collapse-control] {
+
+            &:before {
+                content: attr(data-open);
+            }
+
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+[data-collapse-control] {
+
+    &:before {
+        content: attr(data-close);
+    }
+
+    i {
+        height: rem(8);
+    }
+}
+
+@include media-up('sm') {
+
+}
+
+@include media-up('md') {
+
+}
+
+@include media-up('lg') {
+
+}
+
+@include media-up('xl') {
+
+}
+
+@include media-up('xxl') {
+
+}

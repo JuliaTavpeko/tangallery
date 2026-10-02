@@ -1,0 +1,258 @@
+@use '../utils' as *;
+
+@use 'sass:math';
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: "";
+    }
+
+    .embed_responsive_item,
+    iframe,
+    embed,
+    object,
+    video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.embed-responsive_21by9 {
+    &::before {
+        padding-top: math.percentage(math.div(9,21));
+    }
+}
+
+.embed-responsive_16by9 {
+    &::before {
+        padding-top: math.percentage(math.div(9,19));
+    }
+}
+
+.embed-responsive_4by3 {
+    &::before {
+        padding-top: math.percentage(math.div(3,4));
+    }
+}
+
+.embed-responsive_1by1 {
+    &::before {
+        padding-top: math.percentage(math.div(1,1));
+    }
+}
+
+.img-fluid {
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.img-contain {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.icon,
+.ico-svg {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.hide {
+    opacity: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within)  {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+// Alignment
+
+.text-left      { text-align: left !important; }
+.text-center    { text-align: center !important; }
+.text-right     { text-align: right !important; }
+.text-justify   { text-align: justify !important; }
+.text-nowrap    { white-space: nowrap !important; }
+
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+.fs-14 {
+    font-size: rem(14) !important;
+    line-height: rem(16) !important;
+}
+.fs-16 {
+    font-size: rem(16) !important;
+    line-height: rem(19) !important;
+}
+.fs-18 {
+    font-size: rem(18) !important;
+    line-height: rem(21) !important;
+}
+.fs-20 {
+    font-size: rem(20) !important;
+}
+.fs-24 {
+    font-size: rem(24) !important;
+}
+
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-400 {
+    font-weight: 400 !important;
+}
+.fw-400 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+
+.position-relative {
+    position: relative !important;
+}
+
+.position-sticky {
+    top: rem(10);
+    position: sticky;
+}
+
+.position-sticky-xl {
+
+    @include media-up('xl') {
+        top: rem(10);
+        position: sticky;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+
+.mb-0 			 { margin-bottom: 0 !important; }
+.mb-10 			 { margin-bottom: rem(10) !important; }
+.mb-15 			 { margin-bottom: rem(15) !important; }
+.mb-20 			 { margin-bottom: rem(20) !important; }
+.mb-30 			 { margin-bottom: rem(30) !important; }
+.mb-40 			 { margin-bottom: rem(40) !important; }
+.mb-50 			 { margin-bottom: rem(50) !important; }
+.mb-60 			 { margin-bottom: rem(60) !important; }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.align-start {
+    align-items: flex-start !important;
+}
+.align-center {
+    align-items: center !important;
+}
+.align-end {
+    align-items: flex-end !important;
+}
+
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
+
+
+// Border radius
+
+.radius-10 {
+    border-radius: rem(10) !important;
+}
+.radius-12 {
+    border-radius: rem(12) !important;
+}
+.radius-15 {
+    border-radius: rem(15) !important;
+}
+.radius-20 {
+    border-radius: rem(20) !important;
+}
+
+
+// z-index
+
+.z-index-10 {
+    z-index: 10;
+}
+.z-index-50 {
+    z-index: 50 !important;
+}
+.z-index-100 {
+    z-index: 100 !important;
+}
+
+.color-red {
+    color: var(--c-red) !important;
+}
+
+.color-green {
+    color: #5A8E00 !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.is-hidden {
+    display: none !important;
+}

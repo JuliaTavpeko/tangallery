@@ -1,0 +1,10 @@
+@use '../utils' as *;
+
+@include font('Gilroy', normal, 100, '../fonts/Gilroy/Gilroy-Thin', true, false);
+@include font('Gilroy', normal, 200, '../fonts/Gilroy/Gilroy-UltraLight', true, false);
+@include font('Gilroy', normal, 300, '../fonts/Gilroy/Gilroy-Light', true, false);
+@include font('Gilroy', normal, 400, '../fonts/Gilroy/Gilroy-Regular', true, false);
+@include font('Gilroy', normal, 500, '../fonts/Gilroy/Gilroy-Medium', true, false);
+@include font('Gilroy', normal, 700, '../fonts/Gilroy/Gilroy-Bold', true, false);
+@include font('Gilroy', normal, 800, '../fonts/Gilroy/Gilroy-ExtraBold', true, false);
+@include font('Gilroy', normal, 900, '../fonts/Gilroy/Gilroy-Black', true, false);

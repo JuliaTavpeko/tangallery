@@ -1,0 +1,64 @@
+@use '../../utils/index' as *;
+
+.quantity {
+    height: rem(28);
+    width: rem(90);
+    overflow: hidden;
+    position: relative;
+    padding: 0 rem(8);
+    border-radius: rem(10);
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &__value {
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        color: black;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: rem(2);
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: rem(18);
+        text-align: center;
+        height: rem(28);
+        display: block;
+        background-color: transparent;
+
+        &::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__control {
+        border: none;
+        outline: none;
+        z-index: 10;
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: rem(20);
+        position: relative;
+        color: black;
+        width: rem(30);
+        height: rem(30);
+        cursor: pointer;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        display: none;
+    }
+}
+

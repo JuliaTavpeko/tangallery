@@ -1,0 +1,85 @@
+---
+const {
+    title = 'Frontend Start Project'
+} = Astro.props;
+
+const swiperCss = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/swiper/swiper.min.css'
+    : 'js/libs/swiper/swiper.min.css';
+
+
+const fancyboxCss = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/fancybox/fancybox.css'
+    : 'js/libs/fancybox/fancybox.css';
+
+
+const swiperJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/swiper/swiper-bundle.min.js'
+    : 'js/libs/swiper/swiper-bundle.min.js';
+
+
+const fancyboxJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/fancybox/fancybox.umd.js'
+    : 'js/libs/fancybox/fancybox.umd.js';
+
+const slideToggleJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/slidetoggle/slidetoggle.js'
+    : 'js/libs/slidetoggle/slidetoggle.js';
+
+---
+
+<!doctype html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{title}</title>
+
+
+    <link rel="stylesheet" href={swiperCss}>
+    <link rel="stylesheet" href={fancyboxCss}>
+
+    <slot name="head" />
+
+    {import.meta.env.DEV ? (
+            <link
+                    rel="stylesheet"
+                    href="/src/scss/app.scss"
+            />
+    ) : (
+            <link
+                    rel="stylesheet"
+                    href="css/app.css"
+            />
+    )}
+
+    <slot name="headScripts" />
+</head>
+
+<body>
+
+<slot />
+
+<slot name="modals" />
+
+<slot name="scriptsFirst" />
+
+<script is:inline src={swiperJs}></script>
+<script is:inline src={fancyboxJs}></script>
+<script is:inline src={slideToggleJs}></script>
+<slot name="scripts" />
+
+
+{import.meta.env.DEV ? (
+    <script src="/src/js/app.js"></script>
+) : (
+    <script is:inline src="js/app.min.js"></script>
+)}
+</body>
+</html>

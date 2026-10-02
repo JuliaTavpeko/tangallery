@@ -1,0 +1,107 @@
+@use '../utils' as *;
+
+.error-page {
+	text-align: center;
+	padding-bottom: rem(100);
+
+	&__breadcrumb {
+		margin-bottom: rem(80);
+	}
+
+	&__media {
+		width: rem(296);
+		margin: 0 auto rem(10) auto;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: rem(20);
+		line-height: rem(24);
+		margin-bottom: rem(15);
+	}
+
+	&__text {
+		max-width: rem(460);
+		font-size: rem(14);
+		line-height: rem(18);
+		margin: 0 auto rem(30) auto;
+	}
+
+	&__buttons {
+		display: flex;
+		row-gap: rem(10);
+		column-gap: rem(10);
+		flex-direction: column;
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__title {
+			font-size: rem(24);
+			line-height: rem(28);
+		}
+
+		&__buttons {
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
+
+	@include media-up('lg') {
+
+		&__title {
+
+			br {
+				display: none;
+			}
+		}
+	}
+
+	@include media-up('xl') {
+		padding-bottom: rem(35);
+
+		&__breadcrumb {
+			justify-content: flex-start;
+			margin-bottom: rem(100);
+		}
+
+		&__media {
+			width: rem(422);
+		}
+
+		&__title {
+			font-size: rem(36);
+			line-height: rem(36);
+			margin-bottom: rem(25);
+		}
+
+		&__text {
+			font-size: rem(18);
+			line-height: 160%;
+			max-width: inherit;
+			margin-bottom: rem(25);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}
+
+.bottom-logo {
+	display: none;
+
+	@include media-up('xl') {
+		display: block;
+		overflow: hidden;
+
+		&__image {
+			margin-bottom: rem(-4);
+		}
+	}
+}

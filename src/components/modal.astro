@@ -1,0 +1,488 @@
+<div class="side" data-side="write_to_expert">
+    <div class="side__header">
+        <div class="side__title">Написать эксперту</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__subtitle">Оставьте контакты и наш эксперт ответит в течение 60 минут.</div>
+    <div class="side__body">
+        <form>
+            <div class="form-item">
+                <input type="text" class="field" name="name" placeholder="Введите ваше имя * ">
+            </div>
+
+            <div class="form-item">
+                <input type="text" class="field" name="phone" placeholder="+375 (__) ___-__-__">
+            </div>
+
+            <div class="form-item">
+                <textarea class="field" rows="3" name="text" placeholder="Коротко опишите вопрос"></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-send">
+                <button type="button" class="btn btn-primary w-100">
+                    <span>Отправить анкету</span>
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 8 9">
+                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="form-policy">
+                <label class="checkbox checkbox--md">
+                    <input type="checkbox" class="checkbox__input" name="policy" value="1" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label">Нажимая на кнопку «Оставить отзыв» , я соглашаюсь с условиями <a
+                            href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a></span>
+                </label>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="side" data-side="build_care_system">
+    <div class="side__header">
+        <div class="side__title">Построить систему ухода</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__subtitle">Ответьте на несколько вопросов, чтобы эксперт собрал персональную формулу ухода.</div>
+
+    <div class="side__body">
+        <form>
+            <div class="form-item">
+                <input type="text" class="field" name="name" placeholder="Введите ваше имя * ">
+            </div>
+
+            <div class="form-item">
+                <input type="text" class="field" name="email" placeholder="Введите свою электронную почту">
+            </div>
+
+            <div class="form-item">
+                <input type="text" class="field" name="phone" placeholder="+375 (__) ___-__-__">
+            </div>
+
+            <div class="form-item">
+                <select class="select" name="age" required>
+                    <option value="" disabled selected>Выберите возраст</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <div class="form-item">
+                    <select class="select" name="age" required>
+                        <option value="" disabled selected>Выберите тип кожи</option>
+                        <option value="Сухой">Сухой</option>
+                        <option value="Жирный">Жирный</option>
+                        <option value="Влажный">Влажный</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-checkboxes" data-filter>
+                    <div class="filter__header">
+                        <div class="filter__title">Что беспокоит</div>
+                        <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+                    </div>
+                    <div class="filter__wrapper">
+                        <div class="filter__list">
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Акне" checked>
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Акне</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Морщины">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Морщины</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Розецеа">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Розецеа</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Темные круги">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Темные круги</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Расширенные поры">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Расширенные поры</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Гиперпигментация">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Гиперпигментация</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Обезвоженность">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Обезвоженность</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Чувствительность">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Чувствительность</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Отечность">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Отечность</span>
+                                </label>
+                            </div>
+                            <div class="filter__item">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="chk" value="Тусклость">
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Тусклость</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__footer">
+                            <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <textarea class="field" rows="3" name="text" placeholder="Какие средства уже используете"></textarea>
+            </div>
+
+            <div class="form-item">
+                <div class="form-item">
+                    <select class="select" name="age" required>
+                        <option value="" disabled selected>Чувствительность / Аллергии</option>
+                        <option value="Сухой">Да</option>
+                        <option value="Жирный">Нет</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-item">
+                    <select class="select" name="age" required>
+                        <option value="" disabled selected>Беременность / Лактации</option>
+                        <option value="Сухой">Да</option>
+                        <option value="Жирный">Нет</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-item">
+                    <select class="select" name="age" required>
+                        <option value="" disabled selected>Бюджет на уход</option>
+                        <option value="Сухой">до 5000</option>
+                        <option value="Жирный">от 5000 до 1000</option>
+                        <option value="Влажный">больше 10000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-item">
+                    <select class="select" name="age" required>
+                        <option value="" disabled selected>Когда удобно связаться</option>
+                        <option value="Сухой">с 10 до 15</option>
+                        <option value="Жирный">с 15 до 20</option>
+                        <option value="Влажный">с 10 до 20</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <textarea class="field" rows="3" name="message" placeholder="Комментарий"></textarea>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-send">
+                <button type="button" class="btn btn-primary w-100">
+                    <span>Отправить анкету</span>
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 8 9">
+                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="form-policy">
+                <label class="checkbox checkbox--md">
+                    <input type="checkbox" class="checkbox__input" name="policy" value="1" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label">Нажимая на кнопку «Оставить отзыв» , я соглашаюсь с условиями <a
+                            href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a></span>
+                </label>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="side" data-side="login">
+    <div class="side__header">
+        <div class="side__title">Войти <br>в личный кабинет</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <form>
+            <div class="form-item form-item--md">
+                <label class="switch">
+                    <span class="switch__label switch__label--email">Email</span>
+                    <input class="switch__input" type="checkbox" data-login-switcher>
+                    <span class="switch__slider"></span>
+                    <span class="switch__label switch__label--phone">Телефон</span>
+                </label>
+            </div>
+            <div class="login-email" data-login-email>
+                <div class="form-item">
+                    <input type="text" class="field" name="email" placeholder="Введите ваше имя * ">
+                </div>
+
+                <div class="form-item">
+                    <input type="text" class="field" name="password" placeholder="Введите ваш пароль">
+                </div>
+                
+                <div class="form-divider">
+                    <button type="button" class="btn-link">Забыли пароль?</button>
+                </div>
+                
+            </div>
+            <div class="login-phone" data-login-phone>
+
+                <div class="form-item">
+                    <input type="text" class="field" name="phone" placeholder="Введите свою номер телефона">
+                </div>
+                
+                <div class="form-divider"></div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="btn btn-primary">
+                    <span>Войти</span>
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 8 9">
+                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                        </svg>
+                    </i>
+                </button>
+                <button type="button" class="btn btn-gray">
+                    <span>Создать аккаунт</span>
+                    <i>
+                        <svg class="icon" viewBox="0 0 21 18">
+                            <use href="img/sprites/sprite.svg#heart"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="form-policy">
+                <label class="checkbox checkbox--md">
+                    <input type="checkbox" class="checkbox__input" name="policy" value="1" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label">Нажимая на кнопку «Оставить отзыв» , я соглашаюсь с условиями <a
+                            href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a></span>
+                </label>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="side" data-side="password_recovery">
+    <div class="side__header">
+        <div class="side__title">Восстановление пароля</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <form>
+
+            <div class="form-item">
+                <input type="text" class="field" name="email" placeholder="Введите свою электронную почту">
+            </div>
+            <div class="form-divider">
+                <button type="button" class="btn-link">Вернуться назад</button>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-primary">
+                    <span>Войти</span>
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 8 9">
+                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                        </svg>
+                    </i>
+                </button>
+                <button type="button" class="btn btn-gray">
+                    <span>Создать аккаунт</span>
+                    <i>
+                        <svg class="icon" viewBox="0 0 21 18">
+                            <use href="img/sprites/sprite.svg#heart"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="form-policy">
+                <label class="checkbox checkbox--md">
+                    <input type="checkbox" class="checkbox__input" name="policy" value="1" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label">Нажимая на кнопку «Оставить отзыв» , я соглашаюсь с условиями <a
+                            href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a></span>
+                </label>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="side" data-side="feedback">
+    <div class="side__header">
+        <div class="side__title">Отзыв</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <div class="review-item">
+            <div class="review-item__product">
+                <div class="review-product review-product--feedback">
+                    <div class="review-product__image">
+                        <img src="img/content/review_product_image.png" class="img-cover" loading="lazy">
+                    </div>
+                    <div class="review-product__content">
+                        <div class="review-product__title">Шампунь для волос Iles Formula Haute...</div>
+                        <div class="review-product__brand">Iles Formula</div>
+                    </div>
+                    <div class="review-product__arrow">
+                        <svg class="img-cover" viewBox="0 0 24 24">
+                            <use href="img/sprites/sprite.svg#arrow_right_24"></use>
+                        </svg>
+                    </div>
+                    <a href="#" class="review-product__link"></a>
+                </div>
+            </div>
+            <div class="review-item__content">
+                <div class="review-item__header">
+                    <div class="review-item__wrapper">
+                        <div class="review-item__name">Валентина</div>
+                        <div class="review-item__date">2 июня 2026</div>
+                    </div>
+                    <div class="review-item__rating">
+                        <div class="rating" data-rating="5" data-readonly="true">
+                            <div class="rating__body">
+                                <div class="rating__stars">
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="rating__active" data-rating-active>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating__star">
+                                        <svg class="icon" viewBox="0 0 12 11">
+                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating__value" data-rating-value>5.0</div>
+                            <input type="hidden" data-rating-input value="5">
+                        </div>
+                    </div>
+                </div>
+                <div class="review-item__text">
+                    Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️  </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="side-overlay" data-side-close></div>
+

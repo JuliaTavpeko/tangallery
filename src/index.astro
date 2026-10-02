@@ -1,0 +1,164 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = 'Список страниц';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <h1 class="page-title">{title}</h1>
+
+                <ul style="display: flex; flex-direction: column; row-gap: 16px; margin-bottom: 40px;">
+                    <li>
+                        <a href="homepage.html">Главная страница</a>
+                    </li>
+                    <li>
+                        <a href="catalog.html">Каталог</a>
+                    </li>
+                    <li>
+                        <a href="catalog_brand.html">Каталог Бренд</a>
+                    </li>
+                    <li>
+                        <a href="404.html">404</a>
+                    </li>
+                    <li>
+                        <a href="brands.html">Бренды</a>
+                    </li>
+                    <li>
+                        <a href="product.html">Карточка товара</a>
+                    </li>
+                    <li>
+                        <a href="order_01.html">Оформление заказа</a>
+                    </li>
+                    <li>
+                        <a href="order_02.html">Оформление заказа + Выберите подарок на выбор</a>
+                    </li>
+                    <li>
+                        <a href="order_03.html">Оформление заказа + подарок выбранный</a>
+                    </li>
+                    <li>
+                        <a href="order_04.html">Оформление заказа + Европочта</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Блог</a>
+                    </li>
+                    <li>
+                        <a href="blog_post.html">Блог детальная</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="policy.html">Политика конфиденциальности</a>
+                    </li>
+                    <li>
+                        <a href="offer.html">Договор оферты</a>
+                    </li>
+                    <li>
+                        <a href="exchange_and_return.html">Обмен и возврат</a>
+                    </li>
+                    <li>
+                        <a href="payment.html">Оплата</a>
+                    </li>
+                    <li>
+                        <a href="delivery.html">Доставка</a>
+                    </li>
+                </ul>
+
+                <ul style="display: flex; flex-direction: column; row-gap: 16px; margin-bottom: 40px;">
+                    <li>
+                        <a href="account_01.html">ЛК _ мой профиль</a>
+                    </li>
+                    <li>
+                        <a href="account_02.html">ЛК _ мой профиль + заполненные данные</a>
+                    </li>
+                    <li>
+                        <a href="account_03.html">ЛК _ заказы пусто</a>
+                    </li>
+                    <li>
+                        <a href="account_04.html">ЛК _ заказы в наличии</a>
+                    </li>
+                    <li>
+                        <a href="account_05.html">ЛК _ Вишлист</a>
+                    </li>
+                    <li>
+                        <a href="account_06.html">ЛК _ Персональная скидка</a>
+                    </li>
+                </ul>
+
+                <h2 class="page-title">Modal</h2>
+
+                <ul style="display: flex; flex-direction: column; row-gap: 16px;">
+                    <li>
+                        <a href="#" data-side-open="build_care_system">Построить систему ухода</a>
+                    </li>
+                    <li>
+                        <a href="#" data-side-open="write_to_expert">Написать эксперту</a>
+                    </li>
+                    <li>
+                        <a href="#" data-side-open="login">Войти в личный кабинет</a>
+                    </li>
+                    <li>
+                        <a href="#" data-side-open="password_recovery">Восстановление пароля</a>
+                    </li>
+                    <li>
+                        <a href="#" data-side-open="feedback">Отзыв</a>
+                    </li>
+                    <li>
+                        <a href="#" data-side-open="cart">Корзина</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

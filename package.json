@@ -1,0 +1,28 @@
+{
+  "name": "frontend-start-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:raw": "cross-env JS_BUILD_MODE=raw astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@spiriit/vite-plugin-svg-spritemap": "^7.2.0",
+    "astro": "^7.2.10",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.28.2",
+    "js-beautify": "^2.0.3",
+    "sass": "^1.103.1",
+    "sharp": "^0.35.4"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^6.1.14",
+    "imask": "^7.6.1",
+    "nouislider": "^15.8.1",
+    "slidetoggle": "^4.0.0",
+    "swiper": "^14.2.0"
+  }
+}

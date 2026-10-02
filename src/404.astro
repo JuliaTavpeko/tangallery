@@ -1,0 +1,94 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = '404';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="error-page">
+            <div class="container">
+                <ol class="breadcrumb error-page__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="error-page__media">
+                    <img src="img/404.svg" class="img-cover" alt="">
+                </div>
+                <div class="error-page__title">К сожалению, страница <br>не найдена!</div>
+                <div class="error-page__text">
+                    Возможно, она была удалена или перемещена в&nbsp;другой раздел. Вы&nbsp;можете вернуться на&nbsp;главную или в&nbsp;каталог товаров
+                </div>
+                <div class="error-page__buttons">
+                    <a href="#" class="btn btn-primary">
+                        <span>Вернуться на главную</span>
+                        <i>
+                            <svg class="icon" viewBox="0 0 8 9">
+                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                            </svg>
+                        </i>
+                    </a>
+                    <a href="#" class="btn btn-gray">
+                        <span>Каталог товаров</span>
+                        <i>
+                            <svg class="icon" viewBox="0 0 8 9">
+                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                            </svg>
+                        </i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="bottom-logo">
+            <div class="bottom-logo__image">
+                <img src="img/text_logo.svg" class="img-cover">
+            </div>
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

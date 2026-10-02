@@ -1,0 +1,84 @@
+@use '../utils' as *;
+
+.section-brands {
+	padding-bottom: rem(20);
+
+	@include media-up('md') {
+		padding-top: rem(20);
+	}
+
+	@include media-up('xl') {
+		padding-top: rem(25);
+		padding-bottom: rem(25);
+	}
+}
+
+.brand-carousel {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+
+	.brand-carousel__track {
+		display: inline-flex;
+		animation: marquee 40s linear infinite;
+		overflow: hidden;
+		align-items: center;
+		justify-content: center;
+		gap: rem(58);
+	}
+
+	&__slide {
+		width: rem(160);
+		height: rem(60);
+		display: block;
+		flex-shrink: 0;
+		overflow: hidden;
+	}
+
+
+	@include media-up('xl') {
+
+		.brand-carousel__track {
+			column-gap: rem(100);
+		}
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes marquee-reverse {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@include media-up('sm') {
+
+}
+
+@include media-up('md') {
+
+}
+
+@include media-up('lg') {
+
+}
+
+@include media-up('xl') {
+
+}
+
+@include media-up('xxl') {
+
+}

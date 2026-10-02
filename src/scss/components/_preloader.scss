@@ -1,0 +1,143 @@
+@use '../utils' as *;
+
+.preloader {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1100;
+	position: fixed;
+	padding: rem(100) rem(20);
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	opacity: 1;
+	transition: opacity 0.8s ease;
+
+	&.is-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__logo {
+		display: block;
+		width: rem(280);
+		opacity: 0;
+		transform: scale(0.7);
+		animation: preloader-logo 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	}
+
+	&__text {
+		min-height: rem(60);
+		font-weight: 600;
+		font-size: rem(12);
+		line-height: rem(16);
+		display: flex;
+		column-gap: rem(10);
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transform: translateY(rem(10));
+		animation: preloader-text 1s ease forwards;
+		animation-delay: 1.4s;
+	}
+
+	&__media {
+		margin-top: rem(10);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		animation: preloader-media 0.7s ease forwards;
+		animation-delay: 2.2s;
+	}
+
+	&__slider {
+		border-radius: rem(10);
+		width: rem(150);
+		height: rem(6);
+		flex-shrink: 0;
+		position: relative;
+		background-color: #ECECEC;
+
+		&:before {
+			content: '';
+			width: rem(40);
+			height: rem(6);
+			display: block;
+			border-radius: rem(10);
+			background-color: var(--c-gray);
+			position: absolute;
+			top: 0;
+			left: var(--preloader-position, 0);
+		}
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__logo {
+			width: rem(320);
+		}
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+
+		&__logo {
+			width: rem(487);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+}
+
+@keyframes preloader-logo {
+	from {
+		opacity: 0;
+		transform: scale(0.7);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes preloader-text {
+	from {
+		opacity: 0;
+		transform: translateY(rem(10));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes preloader-media {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

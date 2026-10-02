@@ -1,0 +1,146 @@
+@use '../utils' as *;
+
+.rating {
+    column-gap: rem(8);
+    display: inline-flex;
+    align-items: center;
+
+    &__body {
+        font-size: 0;
+        line-height: 0;
+        position: relative;
+    }
+
+    &__active {
+        top: 0;
+        left: 0;
+        width: 0;
+        z-index: 5;
+        overflow: hidden;
+        position: absolute;
+        display: flex;
+        column-gap: rem(2);
+        fill: var(--c-black);
+        stroke: var(--c-black);
+    }
+
+    &__stars {
+        display: flex;
+        fill: #E6E6E6;
+        stroke: #E6E6E6;
+        column-gap: rem(2);
+    }
+
+    &__star {
+        flex-shrink: 0;
+        height: rem(9);
+        display: inline-block;
+    }
+
+    &__items {
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__item {
+        color: var(--yellow);
+        cursor: pointer;
+        flex: 0 0 20%;
+
+    }
+
+    &__value {
+        top: rem(1);
+        position: relative;
+        font-weight: 500;
+        font-size: rem(10);
+        line-height: rem(12);
+        color: var(--c-gray);
+    }
+
+    @include media-up('md') {
+
+        &__stars {
+            column-gap: rem(4);
+        }
+
+        &__active {
+            column-gap: rem(4);
+        }
+
+        &__star {
+            height: rem(12);
+        }
+
+        &__value {
+            top: 0;
+            font-size: rem(12);
+            line-height: rem(12);
+        }
+    }
+}
+
+[data-rating-readonly='true'] {
+
+    .rating__item {
+        cursor: default;
+    }
+}
+
+
+.simple-rating {
+    overflow: hidden;
+    position: relative;
+    display: inline-flex;
+    font-size: 0;
+    line-height: 0;
+    flex-direction: row-reverse;
+
+
+    &__item {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+
+    &__label {
+        color: gold;
+        font-size: rem(40);
+        line-height: rem(40);
+        cursor: pointer;
+        display: block;
+        transition: .3s;
+
+        &:before {
+            content: '☆';
+
+        }
+    }
+
+    &__item:checked,
+    &__item:checked ~ .simple-rating__label {
+
+        &:before {
+            content: '★';
+        }
+    }
+
+    &__label:hover,
+    &__label:hover ~ .simple-rating__label,
+    &__label:checked ~ .simple-rating__label:hover {
+
+        &:before {
+            content: '★';
+        }
+    }
+}

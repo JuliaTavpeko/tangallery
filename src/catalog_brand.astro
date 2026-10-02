@@ -1,0 +1,250 @@
+---
+import Layout from './layouts/layout.astro';
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+import { itemsCollections } from './layouts/collections.js';
+
+const title = 'Продукция компании Crescina';
+---
+
+
+<Layout title={title}>
+
+    <main class="main main-catalog">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+
+        <div class="catalog-header">
+            <div class="container position-relative z-index-10">
+                <div class="catalog-header__main">
+                    <ol class="breadcrumb catalog-header__breadcrumb">
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Главная</a>
+                        </li>
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Каталог</a>
+                        </li>
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Волосы</a>
+                        </li>
+                    </ol>
+                    <h1 class="catalog-header__title">{title}</h1>
+                </div>
+            </div>
+            <div class="catalog-header__bg">
+                <img src="img/catalog_header_bg.jpg" class="img-cover" alt="" loading="lazy">
+            </div>
+        </div>
+
+        <div class="catalog-intro">
+            <div class="container">
+                <div class="catalog-intro__wrap">
+                    <div class="catalog-intro__media">
+                        <div class="catalog-intro__image">
+                            <img src="img/catalog_brand_logo.jpg" class="img-cover" loading="lazy" alt="">
+                        </div>
+                    </div>
+                    <div class="catalog-intro__content">
+                        <div class="catalog-intro__title">Crescina</div>
+                        <div class="text-collapse" data-collapse>
+                            <div class="text-collapse__content">
+                                <p>Crescina – это инновационные ампульные дерматокосметические препараты, представляющие собой результат научных исследований швейцаркой компании LABO, которые были начаты в 1991 году.</p>
+                                <p>Именно в этом году швейцарские ученые открыли формулу, в состав которой входили две аминокислоты – цистеин и лизин (основные компоненты кератина - волокна, формирующего структуру волоса). Комплекс получил название от слова crescita, что переводится как «расти» и способствовал прорастанию волосяной луковицы и росту непосредственно самих волос.</p>
+                                <p>Crescina – это инновационные ампульные дерматокосметические препараты, представляющие собой результат научных исследований швейцаркой компании LABO, которые были начаты в 1991 году.</p>
+                                <p>Именно в этом году швейцарские ученые открыли формулу, в состав которой входили две аминокислоты – цистеин и лизин (основные компоненты кератина - волокна, формирующего структуру волоса). Комплекс получил название от слова crescita, что переводится как «расти» и способствовал прорастанию волосяной луковицы и росту непосредственно самих волос.</p>
+                            </div>
+                            <div class="text-collapse__control">
+                                <button type="button" class="btn-text" data-collapse-control data-close="Показать" data-open="Свернуть">
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-page">
+
+            <div class="container">
+                
+                <div class="catalog-grid">
+                    {itemsCollections.map((item) => (
+                            <div class="item">
+                                <div class="item__media">
+                                    <a href={item.link} class="item__image">
+                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                    </a>
+
+                                    {item.tags.length > 0 && (
+                                            <div class="item__tags">
+                                                {item.tags.map((tag) => (
+                                                        <div class={`item-tag ${tag.class}`}>
+                                                            <span>{tag.text}</span>
+                                                        </div>
+                                                ))}
+                                            </div>
+                                    )}
+
+                                    <div class="item__button">
+                                        <button type="button" class="btn btn-md btn-primary">
+                                            <span>Купить</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+
+                                    <button type="button" class="item__favorite" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+
+                                <div class="item__content">
+                                    <div class="item__brand">{item.brand}</div>
+
+                                    <div class="item__title">
+                                        <a href={item.link}>{item.title}</a>
+                                    </div>
+
+                                    <div class="item__prices">
+                                        <div class="item__price-old">{item.priceOld}</div>
+                                        <div class="item__price">{item.price}</div>
+                                    </div>
+                                </div>
+                            </div><!-- .item -->
+                    ))}
+
+                    {itemsCollections.map((item) => (
+                            <div class="item">
+                                <div class="item__media">
+                                    <a href={item.link} class="item__image">
+                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                    </a>
+
+                                    {item.tags.length > 0 && (
+                                            <div class="item__tags">
+                                                {item.tags.map((tag) => (
+                                                        <div class={`item-tag ${tag.class}`}>
+                                                            <span>{tag.text}</span>
+                                                        </div>
+                                                ))}
+                                            </div>
+                                    )}
+
+                                    <div class="item__button">
+                                        <button type="button" class="btn btn-md btn-primary">
+                                            <span>Купить</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+
+                                    <button type="button" class="item__favorite" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+
+                                <div class="item__content">
+                                    <div class="item__brand">{item.brand}</div>
+
+                                    <div class="item__title">
+                                        <a href={item.link}>{item.title}</a>
+                                    </div>
+
+                                    <div class="item__prices">
+                                        <div class="item__price-old">{item.priceOld}</div>
+                                        <div class="item__price">{item.price}</div>
+                                    </div>
+                                </div>
+                            </div><!-- .item -->
+                    ))}
+                </div>
+
+                <div class="pagination">
+                    <button type="button" class="btn btn-primary">
+                        <i>
+                            <svg class="icon" viewBox="0 0 9 8">
+                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                            </svg>
+                        </i>
+                        <span>Показать еще</span>
+                        <i>
+                            <svg class="icon" viewBox="0 0 9 8">
+                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <h2 class="title seo-title">
+                    Уникальная продукция Crescina для улучшения состояния кожи
+                </h2>
+                <div class="text-collapse" data-collapse>
+                    <div class="text-collapse__content">
+                        <p><strong>Crescina  – это бренд, который оказал большое влияние на космецевтическую индустрию Компания была основана в 1999 году в США с простого обещания — достичь максимального улучшения состояния кожи без раздражения. </strong></p>
+                        <p>Cosmedix верит, что природа предоставляет нам самые лучшие инструменты для поддержания здоровья и красоты кожи. Поэтому в их продуктах вы найдете высокое содержание натуральных ингредиентов.</p>
+                        <p>Среди этих ингредиентов есть экстракты растений, наполненные витаминами, минералами и антиоксидантами, которые помогают укрепить, защитить и поддерживать кожу. Эти ингредиенты включают в себя такие вещества, как витамин С, стимулирующий синтез коллагена и выравнивающий тон кожи, и ретинол, который повышает восстановление кожи и уменьшает морщины и неровности.</p>
+                        <p>Cosmedix верит, что природа предоставляет нам самые лучшие инструменты для поддержания здоровья и красоты кожи. Поэтому в их продуктах вы найдете высокое содержание натуральных ингредиентов.</p>
+                    </div>
+                    <div class="text-collapse__control">
+                        <button type="button" class="btn-text" data-collapse-control data-close="Показать" data-open="Свернуть">
+                            <i>
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+</Layout>

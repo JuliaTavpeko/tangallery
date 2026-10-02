@@ -1,0 +1,401 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import Offer from "./components/offer.astro";
+import Filters from "./components/filters.astro";
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+import { itemsCollections } from './layouts/collections.js';
+import { categories } from './layouts/categories.js';
+
+const nouiSliderJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/nouislider/nouislider.min.js'
+    : 'js/libs/nouislider/nouislider.min.js';
+
+const nouiSliderCss = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/nouislider/nouislider.min.css'
+    : 'js/libs/nouislider/nouislider.min.css';
+
+
+const title = 'Волосы';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+        <link rel="stylesheet" href={nouiSliderCss}>
+    </Fragment>
+
+    <main class="main main-catalog">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+
+        <div class="catalog-header">
+            <div class="container position-relative z-index-10">
+                <div class="catalog-header__main">
+                    <ol class="breadcrumb catalog-header__breadcrumb">
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Главная</a>
+                        </li>
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Каталог</a>
+                        </li>
+                        <li class="breadcrumb__item">
+                            <a href="#" class="breadcrumb__link">Волосы</a>
+                        </li>
+                    </ol>
+                    <h1 class="catalog-header__title">{title}</h1>
+                </div>
+            </div>
+            <div class="catalog-header__bg">
+                <img src="img/catalog_header_bg.jpg" class="img-cover" alt="" loading="lazy">
+            </div>
+        </div>
+
+        <div class="catalog-page">
+
+            <div class="container">
+                
+                <div class="catalog-categories">
+                    <div class="categories">
+                        <div class="swiper" data-categories>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide non-swiper-slide">
+                                    <button class="filter-toggle" data-side-open="filter">
+                                        <i class="filter-toggle__icon">
+                                            <svg class="icon" viewBox="0 0 22 21">
+                                                <use href="img/sprites/sprite.svg#filter"></use>
+                                            </svg>
+                                        </i>
+                                        <span class="filter-toggle__title">Фильтр</span>
+                                        <i class="filter-toggle__arrow">
+                                            <svg class="icon" viewBox="0 0 8 9">
+                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                            </svg>
+                                        </i>
+                                    </button><!-- .filter-toggle -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="category-active">
+                                        <span>Волосы</span>
+                                    </div>
+                                </div>
+                                {categories.map((category, index) => (
+                                        <div class="swiper-slide">
+                                            <button type="button" class:list={['category-item', { 'is-active': index === 0 }]} data-category-item>
+                                                <i>
+                                                    <img src={category.image} class="img-cover" alt="">
+                                                </i>
+                                                <span>{category.title}</span>
+                                            </button>
+                                        </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-filters">
+                    <div class="swiper" data-catalog-filters>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="catalog-filters__group">
+                                    <button class="filter-toggle" data-side-open="filter">
+                                        <i class="filter-toggle__icon">
+                                            <svg class="icon" viewBox="0 0 22 21">
+                                                <use href="img/sprites/sprite.svg#filter"></use>
+                                            </svg>
+                                        </i>
+                                        <span class="filter-toggle__title">Фильтр</span>
+                                        <i class="filter-toggle__arrow">
+                                            <svg class="icon" viewBox="0 0 8 9">
+                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                            </svg>
+                                        </i>
+                                    </button><!-- .filter-toggle -->
+                                    <div class="catalog-filters__quantity">7 657 товаров</div>
+                                    <div class="sorter" data-select>
+                                        <input type="hidden" value="По умолчанию" data-select-input data-filter-value>
+                                        <div class="sorter__control" data-select-control>
+                                            <div class="sorter__active" data-select-active="Цена">По умолчанию</div>
+                                            <div class="sorter__arrow">
+                                                <svg class="icon" viewBox="0 0 9 8">
+                                                    <use href="img/sprites/sprite.svg#icon_down"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="sorter__content" data-select-content>
+                                            <div class="sorter__list">
+                                                <div class="sorter__item active" data-select-item="По умолчанию">По умолчанию</div>
+                                                <div class="sorter__item" data-select-item="По популярности">По популярности</div>
+                                                <div class="sorter__item" data-select-item="По рейтингу">По рейтингу</div>
+                                                <div class="sorter__item" data-select-item="По новизне">По новизне</div>
+                                                <div class="sorter__item" data-select-item="По цене: Сначала дешевле">По цене: Сначала дешевле</div>
+                                                <div class="sorter__item" data-select-item="По цене: Сначала дороже">По цене: Сначала дороже</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button filter-button--new">
+                                    <i>
+                                        <img src="img/icon_new.svg" class="ico-svg" alt="">
+                                    </i>
+                                    <span>Новинки</span>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button filter-button--discount is-active">
+                                    <i>
+                                        <img src="img/icon_fire.svg" class="ico-svg" alt="">
+                                    </i>
+                                    <span>Скидки</span>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button" data-side-open="filter_price">
+                                    <span>Цены</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#icon_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button" data-side-open="filter_volume">
+                                    <span>Объем</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#icon_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button" data-side-open="filter_brand">
+                                    <span>Бренд</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#icon_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button" data-side-open="filter_type">
+                                    <span>Тип продукта</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#icon_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="filter-button" data-side-open="filter_country">
+                                    <span>Страна</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#icon_down"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-grid">
+                    {itemsCollections.map((item) => (
+                            <div class="item">
+                                <div class="item__media">
+                                    <a href={item.link} class="item__image">
+                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                    </a>
+
+                                    {item.tags.length > 0 && (
+                                            <div class="item__tags">
+                                                {item.tags.map((tag) => (
+                                                        <div class={`item-tag ${tag.class}`}>
+                                                            <span>{tag.text}</span>
+                                                        </div>
+                                                ))}
+                                            </div>
+                                    )}
+
+                                    <div class="item__button">
+                                        <button type="button" class="btn btn-md btn-primary">
+                                            <span>Купить</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+
+                                    <button type="button" class="item__favorite" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+
+                                <div class="item__content">
+                                    <div class="item__brand">{item.brand}</div>
+
+                                    <div class="item__title">
+                                        <a href={item.link}>{item.title}</a>
+                                    </div>
+
+                                    <div class="item__prices">
+                                        <div class="item__price-old">{item.priceOld}</div>
+                                        <div class="item__price">{item.price}</div>
+                                    </div>
+                                </div>
+                            </div><!-- .item -->
+                    ))}
+
+                    <div class="catalog-offer">
+                        <div class="catalog-offer__wrapper">
+                            <Offer />
+                        </div>
+                    </div>
+
+                    {itemsCollections.map((item) => (
+                            <div class="item">
+                                <div class="item__media">
+                                    <a href={item.link} class="item__image">
+                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                    </a>
+
+                                    {item.tags.length > 0 && (
+                                            <div class="item__tags">
+                                                {item.tags.map((tag) => (
+                                                        <div class={`item-tag ${tag.class}`}>
+                                                            <span>{tag.text}</span>
+                                                        </div>
+                                                ))}
+                                            </div>
+                                    )}
+
+                                    <div class="item__button">
+                                        <button type="button" class="btn btn-md btn-primary">
+                                            <span>Купить</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+
+                                    <button type="button" class="item__favorite" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+
+                                <div class="item__content">
+                                    <div class="item__brand">{item.brand}</div>
+
+                                    <div class="item__title">
+                                        <a href={item.link}>{item.title}</a>
+                                    </div>
+
+                                    <div class="item__prices">
+                                        <div class="item__price-old">{item.priceOld}</div>
+                                        <div class="item__price">{item.price}</div>
+                                    </div>
+                                </div>
+                            </div><!-- .item -->
+                    ))}
+                </div>
+
+                <div class="pagination">
+                    <button type="button" class="btn btn-primary">
+                        <i>
+                            <svg class="icon" viewBox="0 0 9 8">
+                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                            </svg>
+                        </i>
+                        <span>Показать еще</span>
+                        <i>
+                            <svg class="icon" viewBox="0 0 9 8">
+                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <h2 class="title seo-title">
+                    TAN GALLERY&nbsp;&mdash; онлайн-платформа <br>профессиональной косметики и&nbsp;средств по&nbsp;уходу
+                </h2>
+                <div class="text-collapse" data-collapse>
+                    <div class="text-collapse__content">
+                        <p><strong>Профессиональный уход&nbsp;&mdash; доступнее, чем вы&nbsp;думаете</strong></p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+
+                    </div>
+                    <div class="text-collapse__control">
+                        <button type="button" class="btn-text" data-collapse-control data-close="Показать" data-open="Свернуть">
+                            <i>
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <Footer />
+
+        <TabBar />
+
+        <Filters />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+        <script is:inline src={nouiSliderJs}></script>
+    </Fragment>
+
+</Layout>

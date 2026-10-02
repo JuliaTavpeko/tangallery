@@ -1,0 +1,51 @@
+# Dependencies
+/node_modules/
+/bower_components/
+
+# Astro
+/.astro/
+
+# IDE
+/.idea/
+/.vscode/
+*.iml
+/out/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+__MACOSX/
+.Saved
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.sublime-*
+
+# Archives
+*.rar
+*.zip
+
+# Project-specific
+/_arc/
+/.publish/
+/ex_files/
+
+# Coverage / cache
+/coverage/
+/.cache/

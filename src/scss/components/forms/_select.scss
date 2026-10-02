@@ -1,0 +1,91 @@
+@use '../../utils/index' as *;
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, textarea {
+    outline: none;
+    &:focus:required:invalid { border-color: red }
+    &:required:valid { border-color: green }
+}
+
+:active, :hover, :focus {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+}
+
+option::selection {background: #ccc;}
+option::-moz-selection {background: #ccc;}
+option::-webkit-selection {background: #ccc; color:#fff;}
+
+.select {
+    margin: 0;
+    width: 100%;
+    outline: none;
+    color: #A2A3A7;
+    box-shadow: none;
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: rem(16);
+    padding: rem(8) rem(35) rem(8) rem(15);
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='8' viewBox='0 0 9 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.0722656 0.75C3.03475 1.03292 4.22423 3.4613 4.44866 4.64013C4.89753 3.34342 6.40121 0.75 8.82506 0.75' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right rem(15) center;
+    background-size: rem(7) rem(6);
+    display: block;
+    border-radius: rem(10);
+    vertical-align: middle;
+    border: rem(1) solid #ECECEC;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &.error {
+        border-color: red !important;
+    }
+
+    &:valid {
+        color: #000;
+    }
+
+    &--md {
+        font-size: rem(13);
+        line-height: rem(20);
+        padding: rem(12) rem(35) rem(12) rem(15);
+    }
+
+    @include media-up('md') {
+        font-size: rem(14);
+        line-height: rem(20);
+        padding: rem(9) rem(35) rem(9) rem(15);
+        background-size: rem(9) rem(8);
+
+        &--md {
+            font-size: rem(14);
+            line-height: rem(20);
+            padding: rem(12) rem(35) rem(12) rem(15);
+        }
+    }
+
+    @include media-up('lg') {
+        font-size: rem(16);
+        line-height: rem(20);
+        padding: rem(15) rem(35) rem(15) rem(15);
+
+        &--md {
+            font-size: rem(16);
+            line-height: rem(20);
+            padding: rem(15) rem(35) rem(15) rem(15);
+        }
+    }
+}

@@ -1,0 +1,217 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import { itemsCollections } from './layouts/collections.js';
+import { faq } from './layouts/faq.js';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = 'Блог детальная';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+                
+                <div class="post-header">
+                    <h1 class="post-header__title">c-PDRN®️ — запатентованный ингредиент, который открыл новую эру в домашнем уходе за кожей</h1>
+                    <div class="post-header__info">Автор: <a href="#">Анна</a> 12.06.2026</div>
+                </div>
+
+                <div class="post">
+                    <div class="post-media">
+                        <img src="img/content/post_image.jpg" class="img-cover" alt="" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <p>Индустрия красоты переживает бум высокотехнологичных компонентов. И сегодня фокус внимания сместился с маскировки недостатков на управление клеточными процессами.</p>
+                        <p>c-PDRN®️ — запатентованный ингредиент, который открыл новую эру в домашнем уходе за кожей. Ниже — пять свойств, за которые эксперты LOOK of YOU особенно ценят этот компонент.</p>
+                        <br>
+                        <p><strong>1. Поддержка восстановления кожи</strong></p>
+                        <p>c-PDRN®️ помогает коже выглядеть более ровной и спокойной, особенно когда барьер ослаблен после стресса, активного ухода или сезонных перепадов.</p>
+                        <br>
+                        <p><strong>2. Работа с признаками усталости</strong></p>
+                        <p>Компонент подходит для ухода, где важно вернуть лицу свежесть, плотность и визуальную наполненность без ощущения перегруженности.</p>
+                        <br>
+                        <p><strong>3. Улучшение текстуры</strong></p>
+                        <p>Регулярный уход с c-PDRN®️ помогает коже выглядеть более гладкой, а тон — более однородным.</p>
+                        <br>
+                        <p><strong>4. Поддержка сияния</strong></p>
+                        <p>Когда кожа получает достаточно восстановления и увлажнения, она лучше отражает свет. Именно поэтому c-PDRN®️ часто используют в программах для естественного сияния.</p>
+                        <br>
+                        <p><strong>5. Совместимость с системным уходом</strong></p>
+                        <p>Ингредиент хорошо вписывается в экспертные схемы ухода: его можно сочетать с увлажняющими, барьерными и антивозрастными средствами, если формула подобрана грамотно.</p>
+                    </div>
+                </div><!-- .post -->
+
+                <div class="section section--md" data-collections>
+                    <div class="section-header">
+                        <div class="section-header__main">
+                            <div class="section-header__wrap">
+                                <h2 class="section-header__title title">Посмотри эти товары</h2>
+                                <div class="section-header__text">Дополните заказ выгодными предложениями</div>
+                            </div>
+                        </div>
+                        <div class="section-header__control">
+                            <button type="button" class="btn-control" data-collections-prev>
+                                <i>
+                                    <svg class="img-cover" viewBox="0 0 13 19">
+                                        <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button type="button" class="btn-control" data-collections-next>
+                                <i>
+                                    <svg class="img-cover" viewBox="0 0 13 19">
+                                        <use href="img/sprites/sprite.svg#nav_next"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="compilation-slider">
+                        <div class="swiper" data-collections-slider>
+                            <div class="swiper-wrapper">
+                                {itemsCollections.map((item) => (
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="item__media">
+                                                    <a href={item.link} class="item__image">
+                                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                                    </a>
+
+                                                    {item.tags.length > 0 && (
+                                                            <div class="item__tags">
+                                                                {item.tags.map((tag) => (
+                                                                        <div class={`item-tag ${tag.class}`}>
+                                                                            <span>{tag.text}</span>
+                                                                        </div>
+                                                                ))}
+                                                            </div>
+                                                    )}
+
+                                                    <div class="item__button">
+                                                        <button type="button" class="btn btn-md btn-primary">
+                                                            <span>Купить</span>
+                                                            <i>
+                                                                <svg class="icon" viewBox="0 0 8 9">
+                                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                                </svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+
+                                                    <button type="button" class="item__favorite" data-add-favorite>
+                                                        <i>
+                                                            <svg class="img-cover" viewBox="0 0 16 15">
+                                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="item__content">
+                                                    <div class="item__brand">{item.brand}</div>
+
+                                                    <div class="item__title">
+                                                        <a href={item.link}>{item.title}</a>
+                                                    </div>
+
+                                                    <div class="item__prices">
+                                                        <div class="item__price-old">{item.priceOld}</div>
+                                                        <div class="item__price">{item.price}</div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .item -->
+                                        </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .section -->
+
+                <div class="section section--md section--last">
+                    <div class="section-header section-header--md">
+                        <div class="section-header__main">
+                            <div class="section-header__wrap">
+                                <h2 class="section-header__title title">Вопрос-ответ</h2>
+                                <div class="section-header__text">Если вы не нашли свой вопрос, то вы можете связаться с нами и задать все интересующие вас вопросы</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-list">
+                        {faq.map((item, index) => (
+                                <div class:list={['qa', { open: index === 0 }]} data-spoiler>
+                                    <div class="qa__header" data-spoiler-control>
+                                        <div class="qa__title">{item.title}</div>
+                                        <div class="qa__arrow">
+                                            <svg class="img-cover" viewBox="0 0 24 24">
+                                                <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="qa__content"
+                                            data-spoiler-content
+                                            style={index === 0 ? 'display: block' : undefined}
+                                    >
+                                        <div class="qa__wrapper">
+                                            {item.content}
+                                        </div>
+                                    </div>
+                                </div>
+                        ))}
+                    </div>
+
+                </div><!-- .section -->
+
+            </div>
+
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

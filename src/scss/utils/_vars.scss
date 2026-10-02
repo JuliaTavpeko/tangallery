@@ -1,0 +1,17 @@
+@use 'functions' as *;
+
+$primary-color: #1D1D1D;
+$secondary-color: #C9AB6C;
+$font-main: 'Inter', sans-serif;
+
+$breakpoints: (
+    'xs': 480px,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1260px,
+    'xxl': 1440px
+) !default;
+
+$html-font-size:            10px;
+$font-size-base:            1.6rem !default;

@@ -1,0 +1,194 @@
+@use '../utils/index' as *;
+
+.section {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+
+	&--gray {
+		background-color: #F6F6F6;
+	}
+
+	&--light {
+		background-color: #FBFBFB;
+	}
+
+	&--light-white {
+		background-color: #FBFBFB;
+	}
+
+	&--sm {
+		padding-top: rem(20);
+		padding-bottom: rem(20);
+	}
+
+	&--last {
+		padding-bottom: 0 !important;
+	}
+
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&--sm {
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+		}
+	}
+
+	@include media-up('lg') {
+		padding-top: rem(75);
+		padding-bottom: rem(75);
+
+		&--sm {
+			padding-top: rem(50);
+			padding-bottom: rem(50);
+		}
+
+		&--md {
+			padding-top: rem(50);
+			padding-bottom: rem(50);
+		}
+
+		&--top-sm {
+			padding-top: rem(50);
+		}
+	}
+
+	@include media-up('xl') {
+		padding-top: rem(100);
+		padding-bottom: rem(100);
+
+		&--light-white {
+			background-color: transparent;
+		}
+
+		&--sm {
+			padding-top: rem(50);
+			padding-bottom: rem(50);
+		}
+
+		&--md {
+			padding-top: rem(50);
+			padding-bottom: rem(50);
+		}
+
+		&--top-sm {
+			padding-top: rem(50);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}
+
+.section-header {
+	margin-bottom: rem(30);
+	display: flex;
+	column-gap: rem(25);
+	flex-direction: column;
+
+	&__main {
+		display: flex;
+		flex-grow: 1;
+		row-gap: rem(15);
+		flex-direction: column;
+	}
+
+	&__wrap {
+		display: flex;
+		row-gap: rem(6);
+		flex-direction: column;
+	}
+
+	&__text {
+		font-size: rem(12);
+		line-height: rem(14);
+	}
+
+	&__control {
+		display: none;
+	}
+
+	&--md {
+		margin-bottom: rem(20);
+	}
+
+	@include media-up('md') {
+
+		&__text {
+			font-size: rem(14);
+			line-height: rem(16);
+		}
+	}
+
+	@include media-up('lg') {
+		margin-bottom: rem(40);
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		&__main {
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		&__control {
+			display: flex;
+			column-gap: rem(14);
+			align-items: center;
+		}
+	}
+
+	@include media-up('xl') {
+		margin-bottom: rem(50);
+
+		&--md {
+			margin-bottom: rem(25);
+		}
+
+		&__wrapper {
+			row-gap: rem(8);
+		}
+
+		&__text {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+	}
+}
+
+.compilation-slider {
+	margin: 0 rem(-4);
+
+	.swiper {
+		overflow: visible;
+	}
+
+	.swiper-slide {
+		width: rem(168);
+		padding: 0 rem(4);
+	}
+
+	@include media-up('md') {
+		margin: 0;
+
+		.swiper-slide {
+			padding: 0;
+			width: auto;
+		}
+	}
+
+	@include media-up('xl') {
+
+		.swiper {
+			overflow: hidden;
+		}
+	}
+}

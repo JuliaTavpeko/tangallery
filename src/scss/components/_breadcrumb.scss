@@ -1,0 +1,79 @@
+@use '../utils' as *;
+
+.breadcrumb {
+	margin: 0;
+	padding: rem(2) 0;
+	color: #2A2424;
+	white-space: nowrap;
+	font-weight: 500;
+	font-size: rem(12);
+	line-height: rem(20);
+	list-style: none;
+	display: flex;
+	flex-wrap: nowrap;
+	row-gap: rem(8);
+	column-gap: rem(10);
+	align-items: center;
+	justify-content: center;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		column-gap: rem(10);
+
+		&:not(:last-child) {
+
+			&::after {
+				content: '/';
+			}
+		}
+	}
+
+	&__link {
+		color: black;
+		text-decoration: none;
+		transition: var(--transition-time);
+
+		&:hover {
+			color: black;
+			text-decoration: underline;
+			transition: var(--transition-time);
+		}
+	}
+
+	&__active {
+		color: var(--c-red);
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+		min-height: rem(40);
+		font-size: rem(14);
+		line-height: rem(20);
+	}
+
+	@include media-up('lg') {
+		justify-content: flex-start;
+
+		&--center {
+			justify-content: center;
+		}
+	}
+
+	@include media-up('xl') {
+		min-height: rem(60);
+		column-gap: rem(20);
+
+		&__item {
+			column-gap: rem(12);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

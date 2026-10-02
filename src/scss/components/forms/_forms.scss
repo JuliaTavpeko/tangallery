@@ -1,0 +1,55 @@
+@use '../../utils/index' as *;
+
+@use "checkboxes";
+@use "radiobuttons";
+@use "switcher";
+@use "inputs";
+@use "select";
+@use "quantity";
+@use "range";
+@use "range-field";
+
+.form-item {
+	margin-bottom: rem(15);
+
+	&--md {
+		margin-bottom: rem(25);
+	}
+}
+
+.form-send {
+
+}
+
+.form-policy {
+	margin-top: rem(25);
+}
+
+.form-buttons {
+	display: flex;
+	row-gap: rem(25);
+	flex-direction: column;
+}
+
+.form-divider {
+	//height: 1px;
+	//margin-top: rem(25);
+	//margin-bottom: rem(25);
+	//background-color: #ECECEC;
+}
+
+.form-divider {
+	margin-top: rem(25);
+	margin-bottom: rem(25);
+	display: flex;
+	column-gap: rem(20);
+	align-items: center;
+
+	&:before {
+		content: '';
+		height: 1px;
+		display: block;
+		background-color: #ECECEC;
+		flex-grow: 1;
+	}
+}

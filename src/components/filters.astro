@@ -1,0 +1,770 @@
+<div class="side" data-side="filter">
+    <div class="side__header">
+        <div class="side__title">Фильтр</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="img-cover" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+
+        <div class="filter-item">
+            <div class="filter-item__title">
+                <span>В наличии</span>
+            </div>
+            <div class="filter-item__action">
+                <label class="switcher">
+                    <input type="checkbox" class="checkbox__input">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-item">
+            <div class="filter-item__title">
+                <i>
+                    <img src="img/icon_fire.svg" class="icon" alt="">
+                </i>
+                <span>Скидки</span>
+            </div>
+            <div class="filter-item__action">
+                <label class="switcher">
+                    <input type="checkbox" class="checkbox__input" checked="checked">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-range">
+            <div class="range-field" data-range>
+                <div class="range-field__legend">
+                    <div class="range-field__label">от <span data-range-from>1,00</span> BYN</div>
+                    <div class="range-field__label">до <span data-range-to>1000,00</span> BYN</div>
+                </div>
+                <div class="range-field__slider">
+                    <div type="text"
+                         data-range-slider
+                         data-min="1"
+                         data-max="1500"
+                         data-start="1,1000"
+                         data-input-postfix="mm"
+                         data-postfix=""
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter open" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="img-cover" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Объем</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content style="display: block;">
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="100" checked>
+                                <i class="checkbox__item"></i>
+                                <div class="checkbox__label">100 мл</div>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="200">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">200 мл</span>
+                            </label>
+
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="500">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">500 мл</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="1000">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">1000 мл</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter open" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Бренд</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content style="display: block;">
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Iles Formula" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Iles Formula</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Acca Kappa">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Acca Kappa</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Baobab Collection">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Baobab Collection</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Azure Tan">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Azure Tan</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Coola">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Coola</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Byredo">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Byredo</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Тип продукта</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content>
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Iles Formula" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Iles Formula</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Acca Kappa">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Acca Kappa</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Baobab Collection">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Baobab Collection</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Azure Tan">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Azure Tan</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Coola">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Coola</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Byredo">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Byredo</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Страна</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content>
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Россия" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Россия</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Испания">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Испания</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Китай">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Китай</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Вьетнам">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Вьетнам</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Назначение</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content>
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Уход" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Уход</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Испания">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Лечение</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Восстановление">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Восстановление</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Окрашивание">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Окрашивание</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Область применения</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content>
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Уход" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Уход</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Испания">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Лечение</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Восстановление">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Восстановление</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Окрашивание">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Окрашивание</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter" data-spoiler data-filter>
+            <div class="filter__header">
+                <div class="filter__title" data-spoiler-control>
+                    <div class="filter__arrow">
+                        <svg class="icon" viewBox="0 0 9 8">
+                            <use href="img/sprites/sprite.svg#filter_arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="filter__label">Срок доставки</div>
+                </div>
+                <button type="button" class="filter__reset" data-filter-reset>Сбросить</button>
+            </div>
+            <div class="filter__content" data-spoiler-content>
+                <div class="filter__wrapper">
+                    <div class="filter__list">
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="Сегодня" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Сегодня</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="1-3 дня">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">1-3 дня</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="До 7 дней<">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">До 7 дней</span>
+                            </label>
+                        </div>
+                        <div class="filter__item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" name="chk" value="от 7 дней">
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">от 7 дней</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__footer">
+                        <button type="button" class="filter__all" data-filter-all>Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="side" data-side="filter_price">
+    <div class="side__header">
+        <div class="side__title">Цена</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+
+        <div class="filter-range">
+            <div class="range-field" data-range>
+                <div class="range-field__legend">
+                    <div class="range-field__label">от <span data-range-from>1,00</span> BYN</div>
+                    <div class="range-field__label">до <span data-range-to>1000,00</span> BYN</div>
+                </div>
+                <div class="range-field__slider">
+                    <div type="text"
+                         data-range-slider
+                         data-min="1"
+                         data-max="1500"
+                         data-start="1,1000"
+                         data-input-postfix="mm"
+                         data-postfix=""
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="side" data-side="filter_volume">
+    <div class="side__header">
+        <div class="side__title">Объем</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+
+        <div class="filter open" data-filter>
+            <div class="filter__list">
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="100" checked>
+                        <i class="checkbox__item"></i>
+                        <div class="checkbox__label">100 мл</div>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="200">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">200 мл</span>
+                    </label>
+
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="500">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">500 мл</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="1000">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">1000 мл</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter__footer">
+                <button type="button" class="filter__all" data-filter-all>Показать все</button>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="side" data-side="filter_brand">
+    <div class="side__header">
+        <div class="side__title">Бренд</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <div class="filter open" data-filter>
+            <div class="filter__list">
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Iles Formula" checked>
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Iles Formula</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Acca Kappa">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Acca Kappa</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Baobab Collection">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Baobab Collection</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Azure Tan">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Azure Tan</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Coola">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Coola</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Byredo">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Byredo</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter__footer">
+                <button type="button" class="filter__all" data-filter-all>Показать все</button>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="side" data-side="filter_type">
+    <div class="side__header">
+        <div class="side__title">Тип продукта</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <div class="filter open" data-filter>
+            <div class="filter__list">
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Iles Formula" checked>
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Iles Formula</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Acca Kappa">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Acca Kappa</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Baobab Collection">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Baobab Collection</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Azure Tan">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Azure Tan</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Coola">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Coola</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Byredo">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Byredo</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter__footer">
+                <button type="button" class="filter__all" data-filter-all>Показать все</button>
+            </div>
+        </div><!-- .filter -->
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="side" data-side="filter_country">
+    <div class="side__header">
+        <div class="side__title">Страна</div>
+        <button type="button" class="btn-close" data-side-close>
+            <svg class="icon" viewBox="0 0 17 17">
+                <use href="img/sprites/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="side__body">
+        <div class="filter open" data-filter>
+            <div class="filter__list">
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Россия" checked>
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Россия</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Испания">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Испания</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Китай">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Китай</span>
+                    </label>
+                </div>
+                <div class="filter__item">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="chk" value="Вьетнам">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Вьетнам</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter__footer">
+                <button type="button" class="filter__all" data-filter-all>Показать все</button>
+            </div>
+        </div><!-- .filter -->
+
+        <div class="filter-submit">
+            <a href="#" class="btn btn-primary w-100" data-filter-submit>
+                <span>Показать 90 товаров</span>
+                <i>
+                    <svg class="icon" viewBox="0 0 8 9">
+                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                    </svg>
+                </i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="side-overlay" data-side-close></div>

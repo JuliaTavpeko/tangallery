@@ -1,0 +1,44 @@
+@use '../utils' as *;
+
+.container,
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: rem(16);
+    padding-right: rem(16);
+}
+
+.container {
+
+    @include media-up('sm') {
+        max-width: rem(576)
+    }
+
+    @include media-up('md') {
+        max-width: rem(768)
+    }
+
+    @include media-up('lg') {
+        max-width: rem(1024)
+    }
+
+    @include media-up('xl') {
+        max-width: rem(1256)
+    }
+
+    @include media-up('xxl') {
+        max-width: rem(1256)
+    }
+}
+
+.container-xl {
+
+    @include media-up('xxl') {
+        max-width: rem(1650)
+    }
+}
+
+.container-fluid {
+    max-width: rem(1900)
+}

@@ -1,0 +1,294 @@
+@use '../utils' as *;
+
+.search {
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 100%;
+	z-index: 900;
+	position: fixed;
+	background-color: white;
+	box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	visibility: hidden;
+	transition: all ease .3s;
+
+	&__header {
+		padding-top: rem(50);
+		padding-bottom: rem(20);
+		background-color: white;
+	}
+
+	&__control {
+		fill: none;
+		stroke: var(--c-black);
+		display: flex;
+		column-gap: rem(20);
+		align-items: center;
+
+		&:before {
+			height: 1px;
+			content: '';
+			background-color: #ECECEC;
+			flex-grow: 1;
+		}
+	}
+
+	&__close {
+		padding: 0;
+		margin: 0;
+		border: none;
+		outline: none;
+		fill: black;
+		color: #9C9C9C;
+		font-weight: 500;
+		font-size: rem(10);
+		line-height: rem(20);
+		white-space: nowrap;
+		background-color: transparent;
+		transition: all ease var(--transition-time);
+		cursor: pointer;
+		display: flex;
+		column-gap: rem(8);
+		align-items: center;
+
+		i {
+			width: rem(12);
+			height: rem(12);
+			font-size: 0;
+			line-height: 0;
+			display: block;
+			flex-shrink: 0;
+		}
+
+		&:hover {
+			fill: black;
+			color: black;
+			text-decoration: none;
+		}
+	}
+
+	&__body {
+		flex-grow: 1;
+		position: relative;
+	}
+
+	&__layout {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		padding-top: rem(5);
+		padding-bottom: rem(50);
+		overflow-y: auto;
+	}
+
+	&__form {
+		margin-bottom: rem(25);
+	}
+
+	&__result {
+		display: grid;
+		grid-row-gap: rem(25);
+		grid-column-gap: rem(8);
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__result {
+			grid-column-gap: rem(16);
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	@include media-up('lg') {
+
+		&__result {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
+
+	@include media-up('xl') {
+		z-index: 550;
+		top: rem(120);
+		height: auto;
+		position: absolute;
+
+		&__header {
+			padding-top: rem(30);
+		}
+
+		&__body {
+		}
+
+		&__close {
+			font-size: rem(12);
+			line-height: rem(20);
+			column-gap: rem(16);
+		}
+
+		&__form {
+			padding-bottom: rem(46);
+		}
+
+		&__result {
+			grid-row-gap: rem(24);
+			grid-column-gap: rem(24);
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		&__layout {
+			padding-top: rem(50);
+			position: relative;
+			padding-bottom: rem(80);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+}
+
+.search-overlay {
+	top: rem(120);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
+	position: fixed;
+	background-color: rgb(0 0 0 / 0.35);
+	opacity: 0;
+	visibility: hidden;
+	transition: ease .3s
+}
+
+
+.search-form {
+	position: relative;
+
+	&__field {
+		margin: 0;
+		width: 100%;
+		outline: none;
+		border: none;
+		color: #000;
+		box-shadow: none;
+		font-weight: 400;
+		font-size: rem(13);
+		line-height: rem(20);
+		padding: rem(8) 0 rem(12) rem(32);
+		border-bottom: 1px solid #ECECEC;
+		background: white;
+		display: block;
+		border-radius: 0;
+		vertical-align: middle;
+
+		&::placeholder {
+			color: #A2A3A7;
+		}
+
+		&::-ms-clear {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+
+		&:focus,
+		&:active {
+			outline: none;
+
+			&::placeholder {
+				color:transparent;
+			}
+		}
+
+		&.error {
+			border-color: red !important;
+		}
+	}
+
+	&__icon {
+		left: 0;
+		top: 50%;
+		fill: var(--c-black);
+		transform: translateY(calc(-50% - rem(3)));
+		font-size: 0;
+		line-height: 0;
+		width: rem(18);
+		height: rem(18);
+		display: block;
+		position: absolute;
+	}
+
+	@include media-up('xl') {
+
+		&__field {
+			font-size: rem(24);
+			line-height: rem(24);
+			padding: rem(8) 0 rem(18) rem(44);
+		}
+
+		&__icon {
+			width: rem(24);
+			height: rem(24);
+			transform: translateY(calc(-50% - rem(6)));
+		}
+	}
+}
+
+.header-fixed {
+
+	.search {
+		top: rem(60);
+		bottom: 0;
+		position: fixed;
+	}
+
+	.search__layout {
+		position: absolute;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			width: rem(6);
+			height: rem(6);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #aaa
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: #EFF6E4;
+		}
+	}
+}
+
+.search-open {
+	overflow: hidden;
+
+	.search {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.search-overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include media-up('xl') {
+		overflow: auto;
+
+		&.header-fixed {
+			overflow: hidden;
+		}
+	}
+}

@@ -1,0 +1,293 @@
+@use '../utils' as *;
+
+.item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__media {
+		z-index: 5;
+		position: relative;
+		padding-bottom: rem(32);
+	}
+
+	&__image {
+		display: block;
+		overflow: hidden;
+		border-radius: rem(20);
+		background-color: #F7F7F7;
+		aspect-ratio: 288 / 280;
+	}
+
+	&__button {
+		display: none;
+	}
+
+	&__favorite {
+		right: 0;
+		bottom: 0;
+		padding: 0;
+		border: none;
+		outline: none;
+		font-size: 0;
+		line-height: 0;
+		z-index: 20;
+		width: rem(22);
+		height: rem(22);
+		cursor: pointer;
+		position: absolute;
+		fill: none;
+		stroke: #D9D9D9;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		i {
+			height: rem(15);
+			display: inline-block;
+		}
+
+		&.added {
+			fill: var(--c-red);
+			stroke: var(--c-red);
+		}
+	}
+
+	&__tags {
+		left: 0;
+		bottom: 0;
+		z-index: 10;
+		position: absolute;
+		display: flex;
+		column-gap: rem(4);
+		align-items: center;
+	}
+
+	&__content {
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: rem(14);
+		padding-top: rem(10);
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__brand {
+		display: none;
+	}
+
+	&__title {
+		flex-grow: 1;
+		font-weight: 500;
+		margin-bottom: rem(16);
+
+		a {
+			color: black;
+			text-decoration: none;
+			transition: var(--transition-time);
+
+			&:hover {
+				color: var(--c-red);
+				text-decoration: underline;
+				transition: var(--transition-time);
+			}
+		}
+	}
+
+	&__prices {
+		white-space: nowrap;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: rem(6);
+		align-items: center;
+	}
+
+	&__price-old {
+		color: #959595;
+		font-size: rem(12);
+		line-height: rem(20);
+		text-decoration: line-through;
+	}
+
+	&__price {
+		color: black;
+		font-size: rem(14);
+		line-height: rem(20);
+		font-weight: 600;
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__media {
+			padding-bottom: 0;
+		}
+
+		&__tags {
+			top: rem(12);
+			left: rem(12);
+			row-gap: rem(6);
+			flex-direction: column;
+		}
+
+		&__favorite {
+			top: rem(12);
+			right: rem(12);
+		}
+
+		&__content {
+			padding-top: rem(16);
+			font-size: rem(14);
+			line-height: rem(16);
+		}
+
+		&__brand {
+			display: block;
+			font-size: rem(12);
+			line-height: rem(14);
+			margin-bottom: rem(10);
+		}
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+
+		&__tags {
+			left: rem(16);
+			row-gap: rem(10);
+		}
+
+		&__content {
+			font-size: rem(16);
+			line-height: rem(20);
+			padding-top: rem(20);
+		}
+
+		&__brand {
+			display: block;
+			font-size: rem(14);
+			line-height: rem(14);
+			margin-bottom: rem(18);
+		}
+
+		&__favorite {
+			transition: var(--transition-time);
+
+			&:hover {
+				stroke: var(--c-red);
+				transition: var(--transition-time);
+			}
+		}
+
+		&__image {
+			transition: filter 0.3s ease;
+		}
+
+		&__button {
+			right: 0;
+			bottom: rem(-20);
+			z-index: 10;
+			display: block;
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.3s ease;
+		}
+
+		&__price-old {
+			font-size: rem(12);
+			line-height: rem(20);
+		}
+
+		&__prices {
+			column-gap: rem(8);
+		}
+
+		&__price {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&:hover {
+
+			.item__image {
+				filter: blur(5px);
+			}
+
+			.item__button {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+}
+
+.item-tag {
+	color: white;
+	font-weight: 700;
+	font-size: rem(8);
+	line-height: rem(10);
+	width: rem(22);
+	height: rem(22);
+	border-radius: rem(22);
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+
+	&--black {
+		background-color: black;
+	}
+
+	&--red {
+		background-color: var(--c-red);
+	}
+
+	@include media-up('md') {
+		width: rem(30);
+		height: rem(30);
+		font-size: rem(10);
+		line-height: rem(12);
+
+		&--sm {
+			width: rem(22);
+			height: rem(22);
+			font-size: rem(8);
+			line-height: rem(10);
+		}
+	}
+
+	@include media-up('xl') {
+		width: rem(40);
+		height: rem(40);
+		font-size: rem(12);
+		line-height: rem(14);
+
+		&--sm {
+			width: rem(22);
+			height: rem(22);
+			font-size: rem(8);
+			line-height: rem(10);
+		}
+	}
+}
+
+.swiper-slide {
+	height: auto;
+
+	.item {
+		height: 100%;
+	}
+}
