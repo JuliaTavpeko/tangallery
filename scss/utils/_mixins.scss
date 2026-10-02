@@ -1,0 +1,87 @@
+@use 'vars' as *;
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin media($query) {
+    @if map-has-key($breakpoints, $query) {
+        @media (min-width: map-get($breakpoints, $query)) {
+            @content;
+        }
+    } @else if str-index($query, "<=") {
+        @media (max-width: #{str-slice($query, 3)}) {
+            @content;
+        }
+    } @else if str-index($query, ">=") {
+        @media (min-width: #{str-slice($query, 3)}) {
+            @content;
+        }
+    }
+}
+
+@mixin media-up($name) {
+    $size: map.get($breakpoints, $name);
+    @if $size {
+        @media (min-width: $size) {
+            @content;
+        }
+    } @else {
+        @warn 'Нет брейкпоинта с именем #{$name}.';
+    }
+}
+
+// Максимум (desktop first)
+@mixin media-down($name) {
+    $size: map.get($breakpoints, $name);
+    @if $size {
+        @media (max-width: ($size - 1px)) {
+            @content;
+        }
+    } @else {
+        @warn 'Нет брейкпоинта с именем #{$name}.';
+    }
+}
+
+
+// Подключение шрифтов
+@mixin font($fname, $fstyle, $fweight, $furl, $woff, $woff2) {
+    $src: ();
+
+    @if $woff2 {
+        $src: list.append($src, url("#{$furl}.woff2") format("woff2"), comma);
+    }
+
+    @if $woff {
+        $src: list.append($src, url("#{$furl}.woff") format("woff"), comma);
+    }
+
+
+    @font-face {
+        font-family: $fname;
+        font-style: $fstyle;
+        font-weight: $fweight;
+        src: $src;
+        font-stretch: 100%;
+        font-display: swap;
+    }
+}
+
+// Custom scrollbar
+@mixin scrollbar(
+    $width: 16px,
+    $height: 100%,
+    $thumb: #cecece,
+    $track: transparent
+) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $thumb;
+    }
+}

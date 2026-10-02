@@ -1,0 +1,23 @@
+@use 'vars';
+
+:root {
+    --base-size: 1vw;
+
+    --ff-primary:           Gilroy, sans-serif;
+    --ff-secondary:         Gilroy, sans-serif;
+
+    --c-primary:            #000000;
+    --c-secondary:          #ffffff;
+
+    --c-black:              #000000;
+    --c-white:              #ffffff;
+    --c-gold:               #C9AB6C;
+    --c-blue:               #1061AB;
+    --c-gray:               #959595;
+    --c-red:                #E7362F;
+    --c-green:              #0FAE00;
+
+    --transition-time:      .25s;
+    --box-shadow:           10px 10px 20px rgba(11, 38, 56, 0.1);
+    --drop-shadow:          drop-shadow(10px 10px 20px rgba(11, 38, 56, 0.1));
+}

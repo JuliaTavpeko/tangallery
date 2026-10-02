@@ -1,0 +1,175 @@
+@use '../utils' as *;
+
+.sale {
+	display: flex;
+	row-gap: rem(42);
+	flex-direction: column;
+
+	&__main {
+
+	}
+
+	&__tag {
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: rem(20);
+		margin-bottom: rem(8);
+	}
+
+	&__title {
+		font-size: rem(24);
+		line-height: rem(40);
+	}
+
+	&__text {
+		font-size: rem(12);
+		line-height: rem(15);
+		margin-bottom: rem(26);
+	}
+
+	&__button {
+
+		.btn {
+			min-width: rem(194);
+		}
+	}
+
+	&__content {
+
+	}
+
+	&__item {
+		border-bottom: 1px solid #ECECEC;
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__tag {
+			font-weight: 500;
+			font-size: rem(14);
+			line-height: rem(20);
+			margin-bottom: rem(8);
+		}
+
+		&__title {
+			font-size: rem(30);
+			line-height: rem(40);
+			margin-bottom: rem(8);
+		}
+
+		&__text {
+			font-size: rem(14);
+			line-height: rem(20);
+			margin-bottom: rem(26);
+		}
+	}
+
+	@include media-up('lg') {
+		column-gap: rem(10);
+		flex-direction: row;
+
+		&__main {
+			width: rem(440);
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__text {
+			flex-grow: 1;
+		}
+
+		&__content {
+			flex-grow: 1;
+		}
+	}
+
+	@include media-up('xl') {
+
+		&__main {
+			width: rem(600);
+		}
+
+		&__title {
+			font-size: rem(36);
+			line-height: rem(40);
+			margin-bottom: rem(12);
+		}
+
+		&__tag {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&__text {
+			font-size: rem(16);
+			line-height: rem(20);
+			max-width: rem(580);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}
+
+.sale-item {
+	fill: none;
+	color: black;
+	stroke: black;
+	font-weight: 500;
+	font-size: rem(12);
+	line-height: rem(20);
+	padding: rem(8) 0;
+	min-height: rem(60);
+	text-decoration: none;
+	transition: .3s ease;
+	display: flex;
+	column-gap: rem(10);
+	align-items: center;
+
+	&__title {
+		flex-grow: 1;
+	}
+
+	&__value {
+		width: rem(40);
+		color: var(--c-red);
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	&__arrow {
+		width: rem(12);
+		height: rem(12);
+		font-size: 0;
+		line-height: 0;
+		display: block;
+		flex-shrink: 0;
+	}
+
+	&:hover {
+		color: var(--c-red);
+		stroke: var(--c-red);
+		text-decoration: none;
+	}
+
+	@include media-up('md') {
+		font-size: rem(14);
+		line-height: rem(20);
+		min-height: rem(58);
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+		font-size: rem(16);
+		line-height: rem(20);
+	}
+}

@@ -1,0 +1,132 @@
+@use '../utils' as *;
+
+.sorter {
+	z-index: 300;
+	position: relative;
+
+	&__control {
+		padding: 0;
+		border: none;
+		outline: none;
+		height: rem(22);
+		background: transparent;
+		cursor: pointer;
+		fill: none;
+		color: var(--c-black);
+		stroke: var(--c-black);
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: rem(16);
+		font-family: var(--ff-primary);
+		white-space: nowrap;
+		display: flex;
+		border-radius: rem(10);
+		column-gap: rem(8);
+		align-items: center;
+	}
+
+	&__arrow {
+		font-size: 0;
+		line-height: 0;
+		height: rem(6);
+		display: inline-block;
+		flex-shrink: 0;
+	}
+
+	&__content {
+		left: rem(-20);
+		width: auto;
+		display: block;
+		top: calc(100% + 3px);
+		min-width: 100%;
+		position: absolute;
+		border: none;
+		outline: none;
+		height: auto;
+		white-space: nowrap;
+		padding: rem(16) rem(20);
+		border-radius: rem(10);
+		color: var(--c-black);
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: rem(20);
+		background-color: white;
+		box-shadow: var(--box-shadow);
+		transition: .25s;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(20px);
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item {
+		display: block;
+		cursor: pointer;
+		padding: rem(6) 0;
+		color: var(--c-black);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--c-red);
+			text-decoration: underline;
+		}
+	}
+
+	&.is-open {
+		z-index: 300;
+
+		.sorter__content {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+			transition: .25s;
+		}
+	}
+
+	@include media-up('md') {
+
+		&__control {
+			height: rem(32);
+		}
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+
+		&__control {
+			height: rem(40);
+			font-size: rem(16);
+			line-height: rem(20);
+			transition: ease .3s;
+
+			&:hover {
+				color: var(--c-red);
+				stroke: var(--c-red);
+			}
+		}
+
+		&__arrow {
+			height: rem(9);
+		}
+
+		&__content {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

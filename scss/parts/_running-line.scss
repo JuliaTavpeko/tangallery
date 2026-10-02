@@ -1,0 +1,142 @@
+@use '../utils' as *;
+
+.running-lines {
+	height: rem(100);
+	position: relative;
+
+	@include media-up('md') {
+		height: rem(120);
+	}
+
+	@include media-up('lg') {
+		height: rem(140);
+	}
+
+	@include media-up('xl') {
+		height: rem(204);
+	}
+}
+
+.running-line {
+	left: 50%;
+	top: 50%;
+	overflow: hidden;
+	min-width: calc(100vw + 10rem);
+	position: absolute;
+	color: white;
+	height: rem(22);
+	white-space: nowrap;
+	font-weight: 500;
+	font-size: rem(10);
+	line-height: rem(12);
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__track {
+		display: flex;
+		align-items: center;
+		width: max-content;
+	}
+
+	&__item {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			color: white;
+			text-decoration: none;
+		}
+	}
+
+	&--green {
+		background-color: #C8E72F;
+		transform: translate(-50%, -50%) rotate(12deg);
+
+		.running-line__track {
+			&.animate {
+			//	animation: scroll 40s linear infinite;
+			}
+		//
+		}
+
+		.running-line__item {
+
+		}
+	}
+
+	&--black {
+		background-color: black;
+		transform: translate(-50%, -50%) rotate(-12deg);
+
+		.running-line__track {
+
+			&.animate {
+	//			animation: scroll-reverse 40s linear infinite;
+			}
+		}
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+		height: rem(30);
+		font-size: rem(12);
+		line-height: rem(16);
+
+		&--green {
+			transform: translate(-50%, -50%) rotate(6deg);
+		}
+
+		&--black {
+			transform: translate(-50%, -50%) rotate(-6deg);
+		}
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+		height: rem(40);
+		font-size: rem(14);
+		line-height: rem(16);
+
+		&__track {
+
+		}
+
+		&--green {
+			transform: translate(-50%, -50%) rotate(5deg);
+		}
+
+		&--black {
+			transform: translate(-50%, -50%) rotate(-5deg);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}
+
+
+[data-marquee] {
+	display: flex;
+	width: max-content;
+	white-space: nowrap;
+	will-change: transform;
+
+	> * {
+		flex: 0 0 auto;
+		margin-right: rem(40);
+	}
+
+	@include media-up('xl') {
+		margin-right: rem(60);
+	}
+}

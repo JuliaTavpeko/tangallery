@@ -1,0 +1,1050 @@
+---
+import Layout from './layouts/layout.astro';
+import { collections } from './layouts/collections.js';
+import { itemsCollections } from './layouts/collections.js';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import Preloader from './components/preloader.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const inputPreloaderJs = import.meta.env.DEV
+    ? '/src/js/preloader.js'
+    : 'js/preloader.js';
+
+const gsapJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/gsap/gsap.min.js'
+    : 'js/libs/gsap/gsap.min.js';
+
+const ScrollTriggerJs = import.meta.env.DEV
+    ? '/src/assets/files/js/libs/gsap/ScrollTrigger.min.js'
+    : 'js/libs/gsap/ScrollTrigger.min.js';
+
+const animationJs = import.meta.env.DEV
+    ? '/src/js/animation.js'
+    : 'js/animation.js';
+
+const title = 'Главная страница';
+const reviewCount = 8;
+---
+
+
+<Layout title={title}>
+
+    <main class="main">
+
+        <Preloader />
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="section section--sm">
+            <div class="container">
+                <div class="promo-slider">
+                    <div class="promo-slider__wrapper">
+                        <div class="swiper" data-promo>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="promo-item promo-item--white">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_01.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Philip Martin's</div>
+                                            <div class="promo-item__text">
+                                                итальянский бренд премиум косметики ухода за волосами, кожей лица и тела
+                                            </div>
+                                        </div>
+                                        <div class="promo-item__button">
+                                            <a href="#" class="btn btn-sm btn-white">
+                                                <span>В каталог</span>
+                                            </a>
+                                        </div>
+                                    </div><!-- .promo-item -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="promo-item">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_02.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Melume Skinscience</div>
+                                            <div class="promo-item__text">
+                                                умный уход, сочетающий в себе силу науки и заботу о коже
+                                            </div>
+                                        </div>
+                                        <a href="#" class="promo-item__link"></a>
+                                    </div><!-- .promo-item -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="promo-item promo-item--white">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_03.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Crescina</div>
+                                            <div class="promo-item__text">
+                                                ампульные
+                                                дерматокосметические
+                                                препараты для лечения
+                                                выпадения и поредения волос
+                                            </div>
+                                        </div>
+                                        <a href="#" class="promo-item__link"></a>
+                                    </div><!-- .promo-item -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="promo-item">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_04.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">HydroPeptide</div>
+                                            <div class="promo-item__text">
+                                                революционная сила активных
+                                                гидропептидов для сияющейи молодой кожи
+                                            </div>
+                                        </div>
+                                        <a href="#" class="promo-item__link"></a>
+                                    </div><!-- .promo-item -->
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="promo-item promo-item--white">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_01.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Philip Martin's</div>
+                                            <div class="promo-item__text">
+                                                итальянский бренд премиум косметики ухода за волосами, кожей лица и тела
+                                            </div>
+                                        </div>
+                                        <div class="promo-item__button">
+                                            <a href="#" class="btn btn-sm btn-white">
+                                                <span>В каталог</span>
+                                            </a>
+                                        </div>
+                                    </div><!-- .promo-item -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="promo-item">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_02.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Melume Skinscience</div>
+                                            <div class="promo-item__text">
+                                                умный уход, сочетающий в себе силу науки и заботу о коже
+                                            </div>
+                                        </div>
+                                        <a href="#" class="promo-item__link"></a>
+                                    </div><!-- .promo-item -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="promo-item promo-item--white">
+                                        <div class="promo-item__image">
+                                            <img src="img/promo/promo_card_image_03.jpg" class="img-cover" alt="" width="576" height="800">
+                                        </div>
+                                        <div class="promo-item__content">
+                                            <div class="promo-item__title">Crescina</div>
+                                            <div class="promo-item__text">
+                                                ампульные
+                                                дерматокосметические
+                                                препараты для лечения
+                                                выпадения и поредения волос
+                                            </div>
+                                        </div>
+                                        <a href="#" class="promo-item__link"></a>
+                                    </div><!-- .promo-item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slider__pagination" data-promo-pagination></div>
+                    <div class="promo-slider__nav promo-slider__nav--prev">
+                        <button type="button" class="btn-control btn-control--sm" data-promo-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                    <div class="promo-slider__nav promo-slider__nav--next">
+                        <button type="button" class="btn-control btn-control--sm" data-promo-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section-brands">
+            <div class="brand-carousel">
+                <div class="brand-carousel__track">
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_01.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_02.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_03.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_04.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_05.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_06.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_07.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_08.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_09.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_10.png" class="img-cover">
+                    </a>
+
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_01.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_02.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_03.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_04.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_05.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_06.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_07.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_08.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_09.png" class="img-cover">
+                    </a>
+                    <a href="#" class="brand-carousel__slide">
+                        <img src="img/brands/brand_logo_10.png" class="img-cover">
+                    </a>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section section--light">
+            <div class="container">
+                <div class="new-items" data-scroll-animation>
+                    <div class="new-items__header">
+                        <div class="new-items__lead">Каждую неделю</div>
+                        <div class="new-items__title title">Новинки</div>
+                        <div class="new-items__text">
+                            Каждый продукт в каталоге — <br>наш личный выбор
+                        </div>
+                        <div class="new-items__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>За новинками</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="new-items__main">
+                        <div class="new-items__wrapper">
+                            <div class="swiper" data-new-items>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href="#" class="item__image">
+                                                    <img src="img/content/items/item_image_01.jpg" class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+                                                <div class="item__tags">
+                                                    <div class="item-tag item-tag--black">
+                                                        <span>New</span>
+                                                    </div>
+                                                    <div class="item-tag item-tag--red">
+                                                        <span>-20%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                            <div class="item__content">
+                                                <div class="item__brand">111SKIN</div>
+                                                <div class="item__title">
+                                                    <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                </div>
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">579,99 BYN</div>
+                                                    <div class="item__price">499,99 BYN</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href="#" class="item__image">
+                                                    <img src="img/content/items/item_image_02.jpg" class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+                                                <div class="item__tags">
+                                                    <div class="item-tag item-tag--black">
+                                                        <span>New</span>
+                                                    </div>
+                                                    <div class="item-tag item-tag--red">
+                                                        <span>-20%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                            <div class="item__content">
+                                                <div class="item__brand">Annbeauty</div>
+                                                <div class="item__title">
+                                                    <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                </div>
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">579,99 BYN</div>
+                                                    <div class="item__price">499,99 BYN</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href="#" class="item__image">
+                                                    <img src="img/content/items/item_image_03.jpg" class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+                                                <div class="item__tags">
+                                                    <div class="item-tag item-tag--black">
+                                                        <span>New</span>
+                                                    </div>
+                                                    <div class="item-tag item-tag--red">
+                                                        <span>-20%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                            <div class="item__content">
+                                                <div class="item__brand">Fiona Franchimon</div>
+                                                <div class="item__title">
+                                                    <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                </div>
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">579,99 BYN</div>
+                                                    <div class="item__price">499,99 BYN</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="offer-section">
+            <div class="offer-section__media">
+                <div class="offer-section__logo" data-offer-animation-scale>
+                    <img src="img/offer/offer_logo.svg" class="img-cover">
+                </div>
+            </div>
+            <div class="offer-section__main">
+                <div class="container">
+                    <div class="offer" data-offer-animation>
+                        <div class="offer__tag offer__tag--md">
+                            <img src="img/offer/offer_new.svg" class="img-cover">
+                        </div>
+                        <div class="offer__content">
+                            <div class="offer__title title">
+                                Салонное <br>восстановление
+                            </div>
+                            <div class="offer__text">
+                                на молекулярном уровне от Tokio Inkarami впервые на FABO!
+                            </div>
+                            <div class="offer__button">
+                                <a href="#" class="btn btn-primary">
+                                    <span>Заказать</span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 8 9">
+                                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                        </svg>
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="offer__image offer__image--sm">
+                            <img src="img/offer/offer_image_sm.jpg" class="img-cover" loading="lazy">
+                        </div>
+                        <div class="offer__image offer__image--lg">
+                            <img src="img/offer/offer_image.jpg" class="img-cover" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section section--light-white section--md" data-collections>
+            <div class="container">
+                <div class="section-header" data-scroll-animation>
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">Скидки</h2>
+                            <div class="section-header__text">Каждый продукт в каталоге — наш личный выбор</div>
+                        </div>
+                        <div class="section-header__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>За скидками</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-header__control">
+                        <button type="button" class="btn-control" data-collections-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn-control" data-collections-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="compilation-slider" data-scroll-animation>
+                    <div class="swiper" data-collections-slider>
+                        <div class="swiper-wrapper">
+                            {itemsCollections.map((item) => (
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href={item.link} class="item__image">
+                                                    <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+
+                                                {item.tags.length > 0 && (
+                                                        <div class="item__tags">
+                                                            {item.tags.map((tag) => (
+                                                                    <div class={`item-tag ${tag.class}`}>
+                                                                        <span>{tag.text}</span>
+                                                                    </div>
+                                                            ))}
+                                                        </div>
+                                                )}
+
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+
+                                            <div class="item__content">
+                                                <div class="item__brand">{item.brand}</div>
+
+                                                <div class="item__title">
+                                                    <a href={item.link}>{item.title}</a>
+                                                </div>
+
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">{item.priceOld}</div>
+                                                    <div class="item__price">{item.price}</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section">
+            <div class="container">
+                <div class="section-header" data-scroll-animation>
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">Отзывы</h2>
+                        </div>
+                        <div class="section-header__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>Смотреть все отзывы</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-header__control">
+                        <button type="button" class="btn-control" data-reviews-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn-control" data-reviews-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="reviews-slider" data-scroll-animation>
+                    <div class="swiper" data-reviews>
+                        <div class="swiper-wrapper">
+                            {Array.from({ length: reviewCount }, () => (
+                                    <div class="swiper-slide">
+                                        <div class="review-item">
+                                            <div class="review-item__product">
+                                                <div class="review-product">
+                                                    <div class="review-product__image">
+                                                        <img src="img/content/review_product_image.png" class="img-cover" loading="lazy">
+                                                    </div>
+                                                    <div class="review-product__content">
+                                                        <div class="review-product__title">Шампунь для волос Iles Formula Haute...</div>
+                                                        <div class="review-product__brand">Iles Formula</div>
+                                                    </div>
+                                                    <div class="review-product__arrow">
+                                                        <svg class="icon" viewBox="0 0 24 24">
+                                                            <use href="img/sprites/sprite.svg#arrow_right_24"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <a href="#" class="review-product__link"></a>
+                                                </div>
+                                            </div>
+                                            <div class="review-item__content">
+                                                <div class="review-item__header">
+                                                    <div class="review-item__wrapper">
+                                                        <div class="review-item__name">Валентина</div>
+                                                        <div class="review-item__date">2 июня 2026</div>
+                                                    </div>
+                                                    <div class="review-item__rating">
+                                                        <div class="rating" data-rating="5" data-readonly="true">
+                                                            <div class="rating__body">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rating__active" data-rating-active>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="rating__star">
+                                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rating__value" data-rating-value>5.0</div>
+                                                            <input type="hidden" data-rating-input value="5">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="review-item__text review-item__text--collapse">
+                                                    Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой.
+                                                </div>
+                                                <div class="review-item__footer">
+                                                    <button type="button" class="review-item__button" data-side-open="feedback">
+                                                        <span>Показать больше</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 24 24">
+                                                                <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="expert">
+            <div class="expert__main">
+                <div class="expert__media">
+                    <div class="expert__image">
+                        <img src="img/expert/expert_image.jpg" class="img-cover" loading="lazy">
+                    </div>
+                </div>
+                <div class="expert__content">
+                    <div class="expert__warning">Эксперт ответит в течение <span class="color-red">60 минут</span></div>
+                    <div class="expert__title title">
+                        Один уход <br><span class="color-red">не</span> подходит всем
+                    </div>
+                    <div class="expert__text">
+                        Только персональный уход способен раскрыть всю силу косметики. Доверьте нашим экспертам создание вашей личной формулы сияния и благополучия. Выберите, с чего начнём.
+                    </div>
+                    <div class="expert__buttons">
+                        <button type="button" class="btn btn-primary">
+                            <span>Построить систему ухода</span>
+                            <i>
+                                <svg class="icon" viewBox="0 0 8 9">
+                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn btn-white btn-plus">
+                            <span>Подобрать средство</span>
+                            <i>
+                                <svg class="icon" viewBox="0 0 17 17">
+                                    <use href="img/sprites/sprite.svg#plus"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="expert__logo">
+                <img src="img/expert/expert_logo.svg" class="img-cover" loading="lazy">
+            </div>
+        </div>
+
+        <div class="section section--md">
+            <div class="container">
+                <div class="section-header" data-scroll-animation>
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">Будь в курсе</h2>
+                        </div>
+                        <div class="section-header__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>Все статьи</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="articles-grid" data-scroll-animation>
+                    <div class="article-item">
+                        <a href="#" class="article-item__image">
+                            <img src="img/content/article_item_image_01.jpg" class="img-cover" loading="lazy">
+                        </a>
+                        <div class="article-item__content">
+                            <div class="article-item__tag">Статья</div>
+                            <div class="article-item__title">
+                                <a href="#">Medik8 Niacinamide Peptides — теперь с обновлённой формулой!</a>
+                            </div>
+                            <div class="article-item__date">2 июня 2026</div>
+                        </div>
+                    </div><!-- .article-item -->
+                    <div class="article-item">
+                        <a href="#" class="article-item__image">
+                            <img src="img/content/article_item_image_02.jpg" class="img-cover" loading="lazy">
+                        </a>
+                        <div class="article-item__content">
+                            <div class="article-item__tag">Новость</div>
+                            <div class="article-item__title">
+                                <a href="#">Medik8 Niacinamide Peptides — теперь с обновлённой формулой!</a>
+                            </div>
+                            <div class="article-item__date">2 июня 2026</div>
+                        </div>
+                    </div><!-- .article-item -->
+                    <div class="article-item">
+                        <a href="#" class="article-item__image">
+                            <img src="img/content/article_item_image_03.jpg" class="img-cover" loading="lazy">
+                        </a>
+                        <div class="article-item__content">
+                            <div class="article-item__tag">Статья</div>
+                            <div class="article-item__title">
+                                <a href="#">Medik8 Niacinamide Peptides — теперь с обновлённой формулой!</a>
+                            </div>
+                            <div class="article-item__date">2 июня 2026</div>
+                        </div>
+                    </div><!-- .article-item -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section section--sm">
+            <div class="container">
+                <div class="founder" data-scroll-animation>
+                    <div class="founder__quote">
+                        <svg class="icon" viewBox="0 0 72 72">
+                            <use href="img/sprites/sprite.svg#quote"></use>
+                        </svg>
+                    </div>
+                    <div class="founder__text">
+                        Я создала TAN GALLERY, чтобы помогать. Помогать решать проблемы кожи, подбирать то, что действительно работает, и сопровождать на каждом этапе. Для меня это не просто магазин — это ответственность за ваш результат
+                    </div>
+                    <div class="founder__person">
+                        <div class="founder__image">
+                            <img src="img/founder_image.jpg" class="img-cover" loading="lazy">
+                        </div>
+                        <div class="founder__info">
+                            <div class="founder__title">Слова  основательницы</div>
+                            <div class="founder__name">Helen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="running-lines">
+            <div class="running-line running-line--green">
+                <div class="running-line__track" data-marquee data-marquee-speed="50" data-marquee-direction="right">
+                    <a href="#" class="running-line__item" data-marquee-item>
+                        Medik8 total moisture daily cleansing gel
+                    </a>
+
+                </div>
+            </div>
+            <div class="running-line running-line--black">
+                <div class="running-line__track" data-marquee data-marquee-speed="50">
+                    <a href="#" class="running-line__item" data-marquee-item>
+                        Medik8 total moisture daily cleansing gel
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section--top-sm" data-collections>
+            <div class="container">
+                <div class="section-header" data-scroll-animation>
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">Подборки</h2>
+                        </div>
+                        <div class="section-header__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>В каталог товаров</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-header__control">
+                        <button type="button" class="btn-control" data-collections-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn-control" data-collections-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="compilation-slider" data-scroll-animation>
+                    <div class="swiper" data-collections-slider>
+                        <div class="swiper-wrapper">
+                            {collections.map((collection) => (
+                                    <div class="swiper-slide">
+                                        <div class="collection-item">
+
+                                            <div class="collection-item__media">
+                                                <a href={collection.link} class="collection-item__image">
+                                                    <img src={collection.image} class="img-cover" alt="" width="576" height="800" loading="lazy">
+                                                </a>
+
+                                                <div class="collection-item__tags">
+                                                    {collection.tags.map((tag) => (
+                                                            <div class={`item-tag ${tag.class}`}>
+                                                                <span>{tag.text}</span>
+                                                            </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            <div class="collection-item__content">
+                                                <div class="collection-item__title">
+                                                    <a href={collection.link}>
+                                                        {collection.title}
+                                                    </a>
+                                                </div>
+
+                                                <div class="collection-item__price">
+                                                    {collection.price}
+                                                </div>
+
+                                                <a href={collection.link} class="collection-item__link">
+                                                    К подборке
+                                                </a>
+                                            </div>
+
+                                        </div><!-- .collection-item -->
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section section--gray">
+            <div class="container">
+                <div class="sale" data-scroll-animation>
+                    <div class="sale__main">
+                        <div class="sale__tag">Специальное предложение</div>
+                        <div class="sale__title title">До <span class="color-red">-35%</span> на избранное</div>
+                        <div class="sale__text">
+                            Профессиональная косметика по временно сниженной цене - лучший повод для построения системы ухода.
+                        </div>
+                        <div class="sale__button">
+                            <a href="#" class="btn btn-primary">
+                                <span>Смотреть все товары</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sale__content">
+                        <div class="sale__item">
+                            <a href="#" class="sale-item">
+                                <span class="sale-item__title">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</span>
+                                <span class="sale-item__value">-35%</span>
+                                <i class="sale-item__arrow">
+                                    <svg class="icon" viewBox="0 0 24 24"><use href="img/sprites/sprite.svg#arrow_right_24"></use></svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="sale__item">
+                            <a href="#" class="sale-item">
+                                <span class="sale-item__title">Очищающий шампунь для кожи головы Philip Martin's Purifying Wash</span>
+                                <span class="sale-item__value">-20%</span>
+                                <i class="sale-item__arrow">
+                                    <svg class="icon" viewBox="0 0 24 24"><use href="img/sprites/sprite.svg#arrow_right_24"></use></svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="sale__item">
+                            <a href="#" class="sale-item">
+                                <span class="sale-item__title">Кондиционер для волос Iles Formula Haute Performance Conditioner</span>
+                                <span class="sale-item__value">-5%</span>
+                                <i class="sale-item__arrow">
+                                    <svg class="icon" viewBox="0 0 24 24"><use href="img/sprites/sprite.svg#arrow_right_24"></use></svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="sale__item">
+                            <a href="#" class="sale-item">
+                                <span class="sale-item__title">Увлажняющий кондиционер L'Alga Boost Conditioner</span>
+                                <span class="sale-item__value">-15%</span>
+                                <i class="sale-item__arrow">
+                                    <svg class="icon" viewBox="0 0 24 24"><use href="img/sprites/sprite.svg#arrow_right_24"></use></svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section">
+            <div class="container">
+                <h2 class="title seo-title">
+                    TAN GALLERY&nbsp;&mdash; онлайн-платформа <br>профессиональной косметики и&nbsp;средств по&nbsp;уходу
+                </h2>
+                <div class="text-collapse" data-collapse>
+                    <div class="text-collapse__content">
+                        <p><strong>Профессиональный уход&nbsp;&mdash; доступнее, чем вы&nbsp;думаете</strong></p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+
+                    </div>
+                    <div class="text-collapse__control">
+                        <button type="button" class="btn-text" data-collapse-control data-close="Показать" data-open="Свернуть">
+                            <i>
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <Fragment slot="scriptsFirst">
+            <script is:inline src={inputPreloaderJs}></script>
+        </Fragment>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+        <script is:inline src={gsapJs}></script>
+        <script is:inline src={ScrollTriggerJs}></script>
+        <script is:inline src={animationJs}></script>
+    </Fragment>
+</Layout>

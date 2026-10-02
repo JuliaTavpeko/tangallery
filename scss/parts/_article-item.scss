@@ -1,0 +1,159 @@
+@use '../utils' as *;
+
+.articles-grid {
+	display: grid;
+	grid-row-gap: rem(30);
+	grid-column-gap: rem(24);
+	grid-template-columns: 1fr;
+
+	@include media-up('md') {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include media-up('lg') {
+		grid-row-gap: rem(36);
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	@include media-up('xl') {
+		grid-row-gap: rem(48);
+		grid-column-gap: rem(24);
+	}
+
+
+}
+
+.article-item {
+	display: flex;
+	column-gap: rem(8);
+	align-items: center;
+
+	&__image {
+		display: block;
+		width: rem(72);
+		height: rem(72);
+		overflow: hidden;
+		border-radius: rem(10);
+		flex-shrink: 0;
+	}
+
+	&__content {
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: rem(14);
+		flex-grow: 1;
+		display: flex;
+		row-gap: rem(4);
+		flex-direction: column;
+	}
+
+	&__title {
+
+		a {
+			color: black;
+			text-decoration: none;
+			transition: var(--transition-time);
+
+			&:hover {
+				color: var(--c-red);
+				text-decoration: underline;
+				transition: var(--transition-time);
+			}
+		}
+	}
+
+	&__tag {
+		font-weight: 700;
+		color: var(--c-red);
+		line-height: rem(18);
+	}
+
+	&__date {
+		color: #959595;
+		font-size: rem(10);
+		line-height: rem(16);
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+	}
+
+	@include media-up('lg') {
+		row-gap: rem(16);
+		flex-direction: column;
+
+		&__image {
+			width: 100%;
+			height: auto;
+			border-radius: rem(36);
+			aspect-ratio: 392 / 400;
+		}
+
+		&__content {
+			font-size: rem(14);
+			line-height: rem(18);
+			//column-gap: rem(10);
+			//row-gap: rem(16);
+			//flex-direction: row;
+			//align-items: flex-start;
+			//flex-wrap: wrap;
+
+			display: grid;
+			grid-row-gap: rem(16);
+			grid-column-gap: rem(10);
+			grid-template-columns: auto 1fr;
+			grid-template-rows: auto 1fr;
+		}
+
+		&__tag {
+			font-size: rem(12);
+			line-height: rem(24);
+			order: 1;
+		}
+
+		&__date {
+			font-size: rem(12);
+			line-height: rem(24);
+			order: 2;
+		}
+
+		&__title {
+			width: 100%;
+			order: 3;
+			grid-column: span 2;
+		}
+	}
+
+	@include media-up('xl') {
+		row-gap: rem(20);
+
+		&__image {
+			border-radius: rem(50);
+		}
+
+		&__content {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&__image {
+			transition: filter 0.3s ease;
+		}
+
+		&:hover {
+
+			.article-item__image {
+				filter: blur(5px);
+			}
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

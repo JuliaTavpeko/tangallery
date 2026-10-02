@@ -1,0 +1,117 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import { faq } from './layouts/faq.js';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+
+const title = 'Доставка';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">Доставка</span>
+                    </li>
+                </ol>
+
+                <h1 class="page-header">Доставка косметики от TAN GALLERY</h1>
+                
+                <div class="content">
+                    <h4>Доставка осуществляется по всему миру!</h4>
+                    <p>На странице оформления заказа Вам будут предложены доступные способы доставки: самовывоз, службы доставок DPD и CDEK. Под каждым из доступных способов будет указана цена доставки. После выбора службы доставки, цена за неё автоматически включается в стоимость Вашего заказа.</p>
+                    <p>Внимательно проверяйте все введенные данные. В случае некорректно указанных данных, стоимость Вашей доставки может быть рассчитана неправильно.</p>
+
+                    <div class="spoilers">
+                        <div class="spoiler" data-spoiler>
+                            <div class="spoiler__header" data-spoiler-control>
+                                <div class="spoiler__title">Самовывоз</div>
+                                <div class="spoiler__arrow">
+                                    <svg class="icon" viewBox="0 0 9 8">
+                                        <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="spoiler__content" data-spoiler-content>
+                                <div class="spoiler__wrapper">
+                                    <p>На странице оформления заказа Вам будут предложены доступные способы доставки: самовывоз, службы доставок DPD и CDEK. Под каждым из доступных способов будет указана цена доставки. После выбора службы доставки, цена за неё автоматически включается в стоимость Вашего заказа.</p>
+                                    <p>Внимательно проверяйте все введенные данные. В случае некорректно указанных данных, стоимость Вашей доставки может быть рассчитана неправильно.</p>
+                                </div>
+                            </div>
+                        </div><!-- .spoiler -->
+                        <div class="spoiler" data-spoiler>
+                            <div class="spoiler__header" data-spoiler-control>
+                                <div class="spoiler__title">По Беларуси и за её пределы</div>
+                                <div class="spoiler__arrow">
+                                    <svg class="icon" viewBox="0 0 9 8">
+                                        <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="spoiler__content" data-spoiler-content>
+                                <div class="spoiler__wrapper">
+                                    <p>На странице оформления заказа Вам будут предложены доступные способы доставки: самовывоз, службы доставок DPD и CDEK. Под каждым из доступных способов будет указана цена доставки. После выбора службы доставки, цена за неё автоматически включается в стоимость Вашего заказа.</p>
+                                    <p>Внимательно проверяйте все введенные данные. В случае некорректно указанных данных, стоимость Вашей доставки может быть рассчитана неправильно.</p>
+                                </div>
+                            </div>
+                        </div><!-- .spoiler -->
+                    </div>
+
+                    <div class="delivery-info">
+                        <div class="delivery-map">
+                            <img src="img/content/map.jpg" class="img-cover" alt="" loading="lazy">
+                        </div>
+                        <p>Если у Вас возникнут вопросы о стоимости и сроках доставки заказа Вы также можете узнать, написав нам на электронный ящик <a href="mailto:info@tangallery.by">info@tangallery.by</a> либо позвонив по телефону</p>
+                        <p><a href="tel:+375293309393">+375 (29) 330 93 93</a> (Viber, WhatsApp, Telegram)</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

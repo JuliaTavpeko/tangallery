@@ -1,0 +1,219 @@
+@use '../utils' as *;
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    padding-top: rem(88);
+    padding-bottom: rem(60);
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+
+    @include media-up('lg') {
+        padding-top: rem(120);
+        padding-bottom: 0;
+    }
+
+    @include media-up('xl') {
+        padding-top: rem(170);
+
+    }
+}
+
+.layout {
+
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-page {
+    flex-grow: 1;
+    z-index: 50;
+    position: relative;
+    padding-bottom: rem(50);
+
+    @include media-up('md') {
+
+    }
+
+    @include media-up('xl') {
+        padding-bottom: rem(100);
+    }
+}
+
+.page-title {
+    margin-bottom: rem(20);
+
+    @include media-up('xl') {
+        margin-bottom: rem(40);
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: rem(28);
+
+    @include media-up('md') {
+        font-size: rem(30);
+        line-height: rem(32);
+    }
+
+    @include media-up('xl') {
+        font-size: rem(36);
+        line-height: rem(40);
+    }
+}
+
+.seo-title {
+    margin-bottom: rem(14);
+
+    br {
+        display: none;
+    }
+
+    @include media-up('md') {
+
+        br {
+            display: block;
+        }
+    }
+
+    @include media-up('xl') {
+        margin-bottom: rem(20);
+    }
+}
+
+.page-header {
+    padding-top: rem(40);
+    padding-bottom: rem(15);
+
+    @include media-up('md') {
+        padding-bottom: rem(25);
+        font-size: rem(28);
+        line-height: rem(32);
+    }
+
+    @include media-up('xl') {
+        font-size: rem(36);
+        line-height: rem(42);
+        text-align: center;
+        padding-bottom: rem(40);
+        text-transform: uppercase;
+    }
+}
+
+.content {
+    font-size: rem(12);
+    line-height: rem(20);
+
+    p {
+        margin-bottom: rem(15);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: var(--c-black);
+        text-decoration: underline;
+        transition: ease .3s;
+
+        &:hover {
+            color: var(--c-red);
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        margin: 0 0 rem(15) 0;
+    }
+
+    @include media-up('md') {
+        font-size: rem(14);
+        line-height: rem(20);
+
+        p {
+            margin-bottom: rem(25);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    @include media-up('xl') {
+        font-size: rem(16);
+        line-height: rem(20);
+
+        p {
+            margin-bottom: rem(25);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+
+.delivery-info {
+    font-size: rem(12);
+    line-height: rem(20);
+    margin-top: rem(15);
+
+    p {
+        margin-bottom: rem(12);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include media-up('md') {
+        font-size: rem(14);
+        line-height: rem(20);
+    }
+
+    @include media-up('xl') {
+        font-size: rem(18);
+        line-height: rem(20);
+        margin-top: rem(25);
+    }
+}
+
+.delivery-map {
+    margin-bottom: rem(15);
+
+    @include media-up('xl') {
+        margin-bottom: rem(25);
+    }
+}
+
+@include media-up('sm') {
+
+}
+
+@include media-up('md') {
+
+}
+
+@include media-up('lg') {
+
+}
+
+@include media-up('xl') {
+
+}
+
+@include media-up('xxl') {
+
+}

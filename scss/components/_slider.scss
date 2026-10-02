@@ -1,0 +1,46 @@
+@use '../utils' as *;
+
+.swiper-pagination-horizontal {
+	display: flex;
+	column-gap: rem(6);
+	align-items: center;
+	justify-content: center;
+}
+
+.swiper-pagination-bullet {
+	width: rem(4);
+	height: rem(4);
+	display: block;
+	overflow: hidden;
+	border-radius: rem(4);
+	background-color: #D9D9D9;
+	flex-shrink: 0;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: black;
+}
+
+.tmp {
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

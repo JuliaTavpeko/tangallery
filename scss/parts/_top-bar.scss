@@ -1,0 +1,69 @@
+@use '../utils' as *;
+
+.top-bar {
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	position: absolute;
+	height: rem(30);
+	color: white;
+	font-weight: 500;
+	font-size: rem(11);
+	line-height: rem(12);
+	white-space: nowrap;
+	text-transform: uppercase;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__track {
+		display: flex;
+		column-gap: rem(40);
+		align-items: center;
+		width: max-content;
+
+		&.animate {
+			animation: scroll 40s linear infinite
+		}
+	}
+
+	&__item {
+		color: var(--c-white);
+		display: block;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--c-white);
+			text-decoration: underline;
+		}
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('lg') {
+		height: rem(40);
+		font-size: rem(14);
+		line-height: rem(14);
+
+		&__track {
+			column-gap: rem(60);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

@@ -1,0 +1,115 @@
+@use '../../utils/index' as *;
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, textarea {
+    outline: none;
+    &:focus:required:invalid { border-color: red }
+    &:required:valid { border-color: green }
+}
+
+:active, :hover, :focus {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+}
+
+option::selection {background: #ccc;}
+option::-moz-selection {background: #ccc;}
+option::-webkit-selection {background: #ccc; color:#fff;}
+
+.field {
+    margin: 0;
+    width: 100%;
+    outline: none;
+    color: #000;
+    box-shadow: none;
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: rem(16);
+    padding: rem(8) rem(15);
+    background: white;
+    display: block;
+    border-radius: rem(10);
+    vertical-align: middle;
+    border: rem(1) solid #ECECEC;
+
+    &::placeholder {
+        color: #A2A3A7;
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #A2A3A7;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        color: #A2A3A7;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: #A2A3A7;
+        opacity: 1;
+    }
+
+    &::-ms-clear {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+
+        &::placeholder {
+      //      color:transparent;
+        }
+    }
+
+    &.error {
+        border-color: red !important;
+    }
+
+    &--md {
+        font-size: rem(13);
+        line-height: rem(20);
+        padding: rem(12) rem(15);
+    }
+
+    @include media-up('md') {
+        font-size: rem(14);
+        line-height: rem(20);
+        padding: rem(9) rem(15);
+
+        &--md {
+            font-size: rem(14);
+            line-height: rem(20);
+            padding: rem(12) rem(15);
+        }
+    }
+
+    @include media-up('lg') {
+        font-size: rem(16);
+        line-height: rem(20);
+        padding: rem(15) rem(15);
+
+        &--md {
+            font-size: rem(16);
+            line-height: rem(20);
+            padding: rem(15) rem(15);
+        }
+    }
+}
+
+
+textarea {
+    resize: none;
+}

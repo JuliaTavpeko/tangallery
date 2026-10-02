@@ -1,0 +1,39 @@
+@use '../utils' as *;
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: rem(14);
+    line-height: rem(19);
+    background-color: white;
+    filter: drop-shadow(0px 20px 20px rgba(11, 38, 56, 0.1));
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: rem(10) rem(15);
+
+        &:not(:last-child) {
+            border-right: 1px solid #F2F2F2;
+        }
+    }
+
+    tr {
+
+        &:not(:last-child) {
+
+            td {
+                border-bottom: 1px solid #F2F2F2;
+            }
+        }
+    }
+}
+
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}

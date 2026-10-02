@@ -1,0 +1,1210 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import Offer from "./components/offer.astro";
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+import { itemsCollections } from './layouts/collections.js';
+import { categories } from './layouts/categories.js';
+
+const title = 'Карточка товара';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="product">
+            <div class="container">
+                <ol class="breadcrumb product__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="product__body">
+                    <div class="product__media">
+                        <div class="product__gallery">
+                            <div class="swiper" data-product-gallery>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="img/content/product_image.jpg" class="product__image" data-fancybox="product_gallery">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="img/content/product_image.jpg" class="product__image" data-fancybox="product_gallery">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="img/content/product_image.jpg" class="product__image" data-fancybox="product_gallery">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product__tags">
+                                <div class="item-tag item-tag--black">New</div>
+                                <div class="item-tag item-tag--red">-20%</div>
+                            </div>
+                            <button type="button" class="product__favorite" data-add-favorite>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 21 18">
+                                        <use href="img/sprites/sprite.svg#heart"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <a href="#" class="product__review">
+                                <span>Смотреть обзор</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 10 11">
+                                        <use href="img/sprites/sprite.svg#play_sm"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="product__thumbs">
+                            <div class="swiper" data-product-thumbs>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product__thumb">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product__thumb">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product__thumb">
+                                            <img src="img/content/product_image.jpg" alt="" class="img-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .product__media -->
+                    <div class="product__main">
+                        <div class="product__brand">
+                            <div class="product__brand-label">Бренд:</div>
+                            <a href="#" class="product__brand-name">Annbeauty</a>
+                        </div>
+                        <div class="product__header">
+                            Шампунь для волос Iles Formula Haute Performance Shampoo
+                        </div>
+                        <div class="product__rating">
+                            <div class="rating" data-rating="5" data-readonly="true">
+                                <div class="rating__body">
+                                    <div class="rating__stars">
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="rating__active" data-rating-active>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="rating__star">
+                                            <svg class="icon" viewBox="0 0 12 11">
+                                                <use href="img/sprites/sprite.svg#rating_star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="rating__items">
+                                        <div class="rating__item" data-rating-item="5"></div>
+                                        <div class="rating__item" data-rating-item="4"></div>
+                                        <div class="rating__item" data-rating-item="3"></div>
+                                        <div class="rating__item" data-rating-item="2"></div>
+                                        <div class="rating__item" data-rating-item="1"></div>
+                                    </div>
+                                </div>
+                                <div class="rating__value" data-rating-value>5.0</div>
+                                <input type="hidden" data-rating-input value="5">
+                            </div>
+                        </div>
+                        <div class="product__article">Артикул: IFSH10068</div>
+                        <div class="product__volume">
+                            <label class="volume-item">
+                                <input type="radio" class="volume-item__input" name="volume" checked>
+                                <span class="volume-item__label">200</span>
+                            </label>
+                            <label class="volume-item">
+                                <input type="radio" class="volume-item__input" name="volume">
+                                <span class="volume-item__label">1000</span>
+                            </label>
+                            <div class="product__volume-title">Обьем / мл</div>
+                        </div>
+                        <div class="product__cost">
+                            <div class="product__price">209.99 BYN</div>
+                            <div class="product__discount">
+                                <div class="product__discount-value">42,66 BYN</div>
+                                <div class="product__discount-text">
+                                    скидка −18% при <a href="#">авторизации</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__buttons">
+                            <div class="product-purchase" data-purchase>
+                                <div class="product-purchase__button">
+                                    <button type="button" class="btn btn-lg btn-primary" data-purchase-button>
+                                        <span>Купить</span>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 8 9">
+                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+                                <div class="product-purchase__quantity">
+                                    <button class="product-purchase__control" data-purchase-control="minus">-</button>
+                                    <div class="product-purchase__input">
+                                        <input type="number" class="product-purchase__value" value="1" min="0" max="99" data-purchase-value disabled>
+                                    </div>
+                                    <button class="product-purchase__control" data-purchase-control="plus">+</button>
+                                </div>
+                            </div>
+                            <button class="btn-favorite" data-add-favorite>
+                                <span>В вишлист</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 21 18">
+                                        <use href="img/sprites/sprite.svg#heart"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+
+                        <div class="product__availability">
+                            <div class="product__availability-title">Наличие в магазине:</div>
+                            <div class="product__availability-shops">
+                                <div class="shop-item">
+                                    <div class="shop-item__main">
+                                        <div class="shop-item__icon">
+                                            <svg class="icon" viewBox="0 0 16 17">
+                                                <use href="img/sprites/sprite.svg#pin"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="shop-item__content">
+                                            <div class="shop-item__address">г. Минск улица Тимирязева д. 126 помещение 85</div>
+                                            <div class="shop-item__info">Магазин работает ежедневно с 10:00 до 18:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="shop-item__status is-availability">Доступно</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product__consultation">
+                            <div class="product__consultation-text">Получить консультацию от нашего специалиста Вы можете в реальном времени</div>
+                            <div class="product__consultation-button">
+                                <a href="#" class="btn btn-lg btn-gray btn-whatsapp">
+                                    <span>Получить консультацию</span>
+                                    <i style="height: 1.6rem">
+                                        <img src="img/icon_whatapp.svg" class="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="product__delivery product-delivery">
+                           <div class="product-delivery__header">
+                               <div class="product-delivery__title">Экспресс-доставка</div>
+                               <div class="product-delivery__icon">
+                                   <img src="img/icon_energy.svg" class="img-cover">
+                               </div>
+                           </div>
+                            <div class="product-delivery__main">
+                                <div class="product-delivery__item">
+                                    <div class="product-delivery__label">Самовывоз из магазина</div>
+                                    <div class="product-delivery__value">сегодня</div>
+                                </div>
+                                <div class="product-delivery__item">
+                                    <div class="product-delivery__label">Курьер</div>
+                                    <div class="product-delivery__value">в течении 3-х часов</div>
+                                </div>
+                                <div class="product-delivery__item">
+                                    <div class="product-delivery__label">Европочта</div>
+                                    <div class="product-delivery__value">16 августа</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product__content">
+
+                            <div class="product-info open" data-spoiler>
+                                <div class="product-info__header" data-spoiler-control>
+                                    <div class="product-info__title">Про средство</div>
+                                    <div class="product-info__arrow">
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-info__content" data-spoiler-content style="display:block;">
+                                    <div class="product-info__wrapper">
+                                        Подарите волосам и коже головы ощущение абсолютной чистоты со Stimulate-Me.Wash. Этот стимулирующий шампунь предназначен для ежедневного использования, чтобы эффективно очищать, освежать и поддерживать здоровый баланс кожи головы. Формула с маслом бергамота, камфорой и экстрактом семян перца обеспечивает интенсивное ощущение свежести, тонизирует кожу головы и помогает волосам выглядеть сильнее, плотнее и объемнее. Шампунь деликатно удаляет излишки себума и загрязнения, не пересушивая волосы, поэтому они дольше остаются чистыми, легкими и ухоженными.
+                                        Подходит для ежедневного использования, особенно для волос, быстро теряющих свежесть или склонных к жирности у корней, а также для тех, кто стремится укрепить волосы, придать им визуальную густоту и наслаждаться длительным ощущением чистоты и свежести.
+                                        Обладает прохладным, чистым ароматом с нотами перца, кардамона и жасмина, дополнен теплой ванилью.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-info" data-spoiler>
+                                <div class="product-info__header" data-spoiler-control>
+                                    <div class="product-info__title">Преимущества</div>
+                                    <div class="product-info__arrow">
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-info__content" data-spoiler-content>
+                                    <div class="product-info__wrapper">
+                                        Подарите волосам и коже головы ощущение абсолютной чистоты со Stimulate-Me.Wash. Этот стимулирующий шампунь предназначен для ежедневного использования, чтобы эффективно очищать, освежать и поддерживать здоровый баланс кожи головы. Формула с маслом бергамота, камфорой и экстрактом семян перца обеспечивает интенсивное ощущение свежести, тонизирует кожу головы и помогает волосам выглядеть сильнее, плотнее и объемнее. Шампунь деликатно удаляет излишки себума и загрязнения, не пересушивая волосы, поэтому они дольше остаются чистыми, легкими и ухоженными.
+                                        Подходит для ежедневного использования, особенно для волос, быстро теряющих свежесть или склонных к жирности у корней, а также для тех, кто стремится укрепить волосы, придать им визуальную густоту и наслаждаться длительным ощущением чистоты и свежести.
+                                        Обладает прохладным, чистым ароматом с нотами перца, кардамона и жасмина, дополнен теплой ванилью.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-info" data-spoiler>
+                                <div class="product-info__header" data-spoiler-control>
+                                    <div class="product-info__title">Основные ингредиенты</div>
+                                    <div class="product-info__arrow">
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-info__content" data-spoiler-content>
+                                    <div class="product-info__wrapper">
+                                        Подарите волосам и коже головы ощущение абсолютной чистоты со Stimulate-Me.Wash. Этот стимулирующий шампунь предназначен для ежедневного использования, чтобы эффективно очищать, освежать и поддерживать здоровый баланс кожи головы. Формула с маслом бергамота, камфорой и экстрактом семян перца обеспечивает интенсивное ощущение свежести, тонизирует кожу головы и помогает волосам выглядеть сильнее, плотнее и объемнее. Шампунь деликатно удаляет излишки себума и загрязнения, не пересушивая волосы, поэтому они дольше остаются чистыми, легкими и ухоженными.
+                                        Подходит для ежедневного использования, особенно для волос, быстро теряющих свежесть или склонных к жирности у корней, а также для тех, кто стремится укрепить волосы, придать им визуальную густоту и наслаждаться длительным ощущением чистоты и свежести.
+                                        Обладает прохладным, чистым ароматом с нотами перца, кардамона и жасмина, дополнен теплой ванилью.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-info" data-spoiler>
+                                <div class="product-info__header" data-spoiler-control>
+                                    <div class="product-info__title">Способ применения</div>
+                                    <div class="product-info__arrow">
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-info__content" data-spoiler-content>
+                                    <div class="product-info__wrapper">
+                                        Подарите волосам и коже головы ощущение абсолютной чистоты со Stimulate-Me.Wash. Этот стимулирующий шампунь предназначен для ежедневного использования, чтобы эффективно очищать, освежать и поддерживать здоровый баланс кожи головы. Формула с маслом бергамота, камфорой и экстрактом семян перца обеспечивает интенсивное ощущение свежести, тонизирует кожу головы и помогает волосам выглядеть сильнее, плотнее и объемнее. Шампунь деликатно удаляет излишки себума и загрязнения, не пересушивая волосы, поэтому они дольше остаются чистыми, легкими и ухоженными.
+                                        Подходит для ежедневного использования, особенно для волос, быстро теряющих свежесть или склонных к жирности у корней, а также для тех, кто стремится укрепить волосы, придать им визуальную густоту и наслаждаться длительным ощущением чистоты и свежести.
+                                        Обладает прохладным, чистым ароматом с нотами перца, кардамона и жасмина, дополнен теплой ванилью.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-info" data-spoiler>
+                                <div class="product-info__header" data-spoiler-control>
+                                    <div class="product-info__title">Состав</div>
+                                    <div class="product-info__arrow">
+                                        <svg class="icon" viewBox="0 0 9 8">
+                                            <use href="img/sprites/sprite.svg#spoiler_arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-info__content" data-spoiler-content>
+                                    <div class="product-info__wrapper">
+                                        Подарите волосам и коже головы ощущение абсолютной чистоты со Stimulate-Me.Wash. Этот стимулирующий шампунь предназначен для ежедневного использования, чтобы эффективно очищать, освежать и поддерживать здоровый баланс кожи головы. Формула с маслом бергамота, камфорой и экстрактом семян перца обеспечивает интенсивное ощущение свежести, тонизирует кожу головы и помогает волосам выглядеть сильнее, плотнее и объемнее. Шампунь деликатно удаляет излишки себума и загрязнения, не пересушивая волосы, поэтому они дольше остаются чистыми, легкими и ухоженными.
+                                        Подходит для ежедневного использования, особенно для волос, быстро теряющих свежесть или склонных к жирности у корней, а также для тех, кто стремится укрепить волосы, придать им визуальную густоту и наслаждаться длительным ощущением чистоты и свежести.
+                                        Обладает прохладным, чистым ароматом с нотами перца, кардамона и жасмина, дополнен теплой ванилью.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!-- .product__main -->
+                </div><!-- .product -->
+            </div>
+
+        </div><!-- .product -->
+        
+        <div class="product-cat">
+            <div class="container">
+                <div class="product-cat__header">
+                    <h2 class="section-header__title title">Посмотрите ещё</h2>
+                    <div class="product-cat__button">
+                        <a href="#" class="btn btn-small btn-gray">
+                            <span>Каталог товаров</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-cat__main">
+                    <div class="categories">
+                        <div class="swiper" data-categories>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="category-active">
+                                        <span>Волосы</span>
+                                    </div>
+                                </div>
+                                {categories.map((category, index) => (
+                                        <div class="swiper-slide">
+                                            <button type="button" class:list={['category-item', { 'is-active': index === 0 }]} data-category-item>
+                                                <i>
+                                                    <img src={category.image} class="icon" alt="">
+                                                </i>
+                                                <span>{category.title}</span>
+                                            </button>
+                                        </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section-categories -->
+
+        <div class="comments">
+            <div class="container">
+                <div class="comments__header">
+                    <h2 class="comments__title title">Отзывы о товаре</h2>
+                    <div class="comments__buttons">
+                        <button type="button" class="btn btn-primary btn-add" data-side-open="comment_new">
+                            <span>Оставить отзыв</span>
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 11 11">
+                                    <use href="img/sprites/sprite.svg#plus_2"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <a href="#" class="btn btn-gray comments__buttons--hide-xl">
+                            <span>Смотреть все отзывы</span>
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 8 9">
+                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                </svg>
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="comments__main">
+                    <div class="comments__aside">
+                        <div class="comments__info">
+                            <div class="comments-info">
+                                <div class="comments-info__value">4.5</div>
+                                <div class="comments-info__wrapper">
+                                    <div class="comments-info__stars">
+                                        <div class="rating" data-rating="4.5" data-readonly="true">
+                                            <div class="rating__body">
+                                                <div class="rating__stars">
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__active" data-rating-active>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" data-rating-input value="4.5">
+                                        </div>
+                                    </div>
+                                    <div class="comments-info__text">Оценка товара</div>
+                                </div>
+                            </div>
+                            <div class="comments-info">
+                                <div class="comments-info__value">85%</div>
+                                <div class="comments-info__wrapper">
+                                    <div class="comments-info__text">Покупателей <br>рекомендуют купить</div>
+                                </div>
+                            </div>
+                            <div class="comments-info">
+                                <div class="comments-info__value">4</div>
+                                <div class="comments-info__wrapper">
+                                    <div class="comments-info__text">Отзыва оставлены <br>клиентами</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments__view-all">
+                            <a href="#" class="btn btn-gray">
+                                <span>Смотреть все отзывы</span>
+                                <i>
+                                    <svg class="ico-svg" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="comments__content">
+                        <div class="comments__list">
+                            
+                            <div class="no-comments">
+                                <div class="no-comments__title">Оставьте первый отзыв по данному товару</div>
+                                <div class="no-comments__text">
+                                    <button type="button" class="no-comments__button" data-side-open="comment_new">Оставить отзыв</button>
+                                </div>
+                            </div>
+                            
+                            <div class="comment" data-comment>
+                                <div class="comment__header">
+                                    <div class="comment__info">
+                                        <div class="comment__name">Валентина</div>
+                                        <div class="comment__date">2 июня 2026</div>
+                                    </div>
+                                    <div class="comment__rating">
+                                        <div class="rating" data-rating="5" data-readonly="true">
+                                            <div class="rating__body">
+                                                <div class="rating__stars">
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__active" data-rating-active>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rating__value" data-rating-value>5.0</div>
+                                            <input type="hidden" data-rating-input value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment__content" data-comment-content>
+                                    <div class="comment__text">
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                    </div>
+                                    <div class="comment__control">
+                                        <button type="button" class="btn-text" data-comment-control data-close="Показать больше" data-open="Свернуть">
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 24 24">
+                                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment" data-comment>
+                                <div class="comment__header">
+                                    <div class="comment__info">
+                                        <div class="comment__name">Валентина</div>
+                                        <div class="comment__date">2 июня 2026</div>
+                                    </div>
+                                    <div class="comment__rating">
+                                        <div class="rating" data-rating="5" data-readonly="true">
+                                            <div class="rating__body">
+                                                <div class="rating__stars">
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__active" data-rating-active>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rating__value" data-rating-value>5.0</div>
+                                            <input type="hidden" data-rating-input value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment__content" data-comment-content>
+                                    <div class="comment__text">
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                    </div>
+                                    <div class="comment__control">
+                                        <button type="button" class="btn-text" data-comment-control data-close="Показать больше" data-open="Свернуть">
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 24 24">
+                                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment" data-comment>
+                                <div class="comment__header">
+                                    <div class="comment__info">
+                                        <div class="comment__name">Валентина</div>
+                                        <div class="comment__date">2 июня 2026</div>
+                                    </div>
+                                    <div class="comment__rating">
+                                        <div class="rating" data-rating="5" data-readonly="true">
+                                            <div class="rating__body">
+                                                <div class="rating__stars">
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__active" data-rating-active>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__star">
+                                                        <svg class="icon" viewBox="0 0 12 11">
+                                                            <use href="img/sprites/sprite.svg#rating_star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rating__value" data-rating-value>5.0</div>
+                                            <input type="hidden" data-rating-input value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment__content" data-comment-content>
+                                    <div class="comment__text">
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                        <p>Невероятно крутое средство с роскошным ароматом! Несмотря на то, что у меня тонкие волосы, они не пачкаются быстро — а это для меня всегда было проблемой. Покупала в паре с шампунем из той же серии — однозначно рекомендую! ❤️</p>
+                                    </div>
+                                    <div class="comment__control">
+                                        <button type="button" class="btn-text" data-comment-control data-close="Показать больше" data-open="Свернуть">
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 24 24">
+                                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section-comments -->
+
+        <div class="section section--md" data-collections>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">С этим товаром также покупают</h2>
+                            <div class="section-header__text">Дополните заказ выгодными предложениями</div>
+                        </div>
+                    </div>
+                    <div class="section-header__control">
+                        <button type="button" class="btn-control" data-collections-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn-control" data-collections-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="compilation-slider">
+                    <div class="swiper" data-collections-slider>
+                        <div class="swiper-wrapper">
+                            {itemsCollections.map((item) => (
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href={item.link} class="item__image">
+                                                    <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+
+                                                {item.tags.length > 0 && (
+                                                        <div class="item__tags">
+                                                            {item.tags.map((tag) => (
+                                                                    <div class={`item-tag ${tag.class}`}>
+                                                                        <span>{tag.text}</span>
+                                                                    </div>
+                                                            ))}
+                                                        </div>
+                                                )}
+
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+
+                                            <div class="item__content">
+                                                <div class="item__brand">{item.brand}</div>
+
+                                                <div class="item__title">
+                                                    <a href={item.link}>{item.title}</a>
+                                                </div>
+
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">{item.priceOld}</div>
+                                                    <div class="item__price">{item.price}</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section section--sm">
+            <div class="container">
+                <div class="offer-wrapper">
+                    <Offer />
+                </div>
+            </div>
+        </div>
+
+        <div class="section section--md" data-collections>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header__main">
+                        <div class="section-header__wrap">
+                            <h2 class="section-header__title title">Похожие товары</h2>
+                            <div class="section-header__text">Подобрано специально для вас</div>
+                        </div>
+                    </div>
+                    <div class="section-header__control">
+                        <button type="button" class="btn-control" data-collections-prev>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="btn-control" data-collections-next>
+                            <i>
+                                <svg class="icon" viewBox="0 0 13 19">
+                                    <use href="img/sprites/sprite.svg#nav_next"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="compilation-slider">
+                    <div class="swiper" data-collections-slider>
+                        <div class="swiper-wrapper">
+                            {itemsCollections.map((item) => (
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="item__media">
+                                                <a href={item.link} class="item__image">
+                                                    <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                                </a>
+
+                                                {item.tags.length > 0 && (
+                                                        <div class="item__tags">
+                                                            {item.tags.map((tag) => (
+                                                                    <div class={`item-tag ${tag.class}`}>
+                                                                        <span>{tag.text}</span>
+                                                                    </div>
+                                                            ))}
+                                                        </div>
+                                                )}
+
+                                                <div class="item__button">
+                                                    <button type="button" class="btn btn-md btn-primary">
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+
+                                                <button type="button" class="item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="icon" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+
+                                            <div class="item__content">
+                                                <div class="item__brand">{item.brand}</div>
+
+                                                <div class="item__title">
+                                                    <a href={item.link}>{item.title}</a>
+                                                </div>
+
+                                                <div class="item__prices">
+                                                    <div class="item__price-old">{item.priceOld}</div>
+                                                    <div class="item__price">{item.price}</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .item -->
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <div class="section">
+            <div class="container">
+                <h2 class="title seo-title">
+                    TAN GALLERY&nbsp;&mdash; онлайн-платформа <br>профессиональной косметики и&nbsp;средств по&nbsp;уходу
+                </h2>
+                <div class="text-collapse" data-collapse>
+                    <div class="text-collapse__content">
+                        <p><strong>Профессиональный уход&nbsp;&mdash; доступнее, чем вы&nbsp;думаете</strong></p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+                        <p><strong>TAN GALLERY</strong>&nbsp;&mdash; это онлайн-платформа для ценителей красоты, открывающая безграничный доступ ко&nbsp;всем новинкам бьюти-индустрии. Мы&nbsp;собрали лучшие мировые бренды профессионального ухода в&nbsp;одном месте&nbsp;&mdash; с&nbsp;доставкой по&nbsp;Беларуси и&nbsp;всему миру.</p>
+                        <p>Мы&nbsp;не&nbsp;просто продаём косметику&nbsp;&mdash; мы&nbsp;помогаем выбрать&nbsp;то, что действительно подходит именно вам. Консультации, подробные рекомендации и&nbsp;индивидуальный подход&nbsp;&mdash; в&nbsp;основе каждого заказа.</p>
+
+                    </div>
+                    <div class="text-collapse__control">
+                        <button type="button" class="btn-text" data-collapse-control data-close="Показать" data-open="Свернуть">
+                            <i>
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <use href="img/sprites/sprite.svg#arrow_down"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .section -->
+
+        <Footer />
+
+
+        <Cart />
+
+        <Modal />
+
+        <div class="product-bar">
+            <div class="container">
+                <div class="product-bar__main">
+                    <div class="product-bar__item">
+                        <div class="product-bar__image">
+                            <img src="img/content/product_image.jpg" class="img-cover" alt="">
+                        </div>
+                        <div class="product-bar__content">
+                            <div class="product-bar__title">Шампунь для волос Iles Formula Haute Performance Shampoo</div>
+                            <div class="product-bar__row">
+                                <div class="product-bar__volume">200 мл</div>
+                                <div class="product-bar__brand">Бренд: <a href="#">Annbeauty</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-bar__buttons">
+                        <div class="product-bar__consultation">
+                            <a href="#" class="btn btn-lg btn-gray btn-whatsapp">
+                                <span>Получить консультацию</span>
+                                <i style="height: 1.6rem">
+                                    <img src="img/icon_whatapp.svg" class="icon">
+                                </i>
+                            </a>
+                        </div>
+                        <div class="product-bar__favorite">
+                            <button class="btn-favorite" data-add-favorite>
+                                <span>В вишлист</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 21 18">
+                                        <use href="img/sprites/sprite.svg#heart"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                        <div class="product-bar__purchase" data-purchase>
+                            <div class="product-bar__button">
+                                <button type="button" class="btn btn-lg btn-primary" data-purchase-button>
+                                    <span>
+                                        Купить <span>за  <strong>209.99 BYN</strong></span>
+                                    </span>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 8 9">
+                                            <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="product-bar__quantity">
+                                <button class="product-bar__control" data-purchase-control="minus">-</button>
+                                <div class="product-bar__input">
+                                    <input type="number" class="product-purchase__value" value="1" min="0" max="99" data-purchase-value disabled>
+                                </div>
+                                <button class="product-bar__control" data-purchase-control="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side side-comments" data-side="comment_new">
+            <div class="side__header">
+                <div class="side__title">Оставить отзыв</div>
+                <button type="button" class="btn-close" data-side-close>
+                    <svg class="icon" viewBox="0 0 17 17">
+                        <use href="img/sprites/sprite.svg#close"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="side__body">
+                <form>
+                    <div class="comment-new">
+                        <div class="comment-new__header">Будьте первым, кто оставил отзыв</div>
+                        <div class="comment-new__score">
+                            <div class="comment-new__title">
+                                <div class="comment-new__label">Ваша оценка <sup class="color-red">*</sup></div>
+                            </div>
+                            <div class="score">
+                                <label class="score__item">
+                                    <input type="radio" class="score__input" name="score" value="1">
+                                    <i class="score__label">
+                                        <i class="score__star">
+                                            <svg class="icon" viewBox="0 0 11 10">
+                                                <use href="img/sprites/sprite.svg#star_3"></use>
+                                            </svg>
+                                        </i>
+                                    </i>
+                                </label>
+                                <label class="score__item">
+                                    <input type="radio" class="score__input" name="score" value="2">
+                                    <i class="score__label">
+                                        <i class="score__star">
+                                            <svg class="icon" viewBox="0 0 11 10">
+                                                <use href="img/sprites/sprite.svg#star_3"></use>
+                                            </svg>
+                                        </i>
+                                    </i>
+                                </label>
+                                <label class="score__item">
+                                    <input type="radio" class="score__input" name="score" value="3">
+                                    <i class="score__label">
+                                        <i class="score__star">
+                                            <svg class="icon" viewBox="0 0 11 10">
+                                                <use href="img/sprites/sprite.svg#star_3"></use>
+                                            </svg>
+                                        </i>
+                                    </i>
+                                </label>
+                                <label class="score__item">
+                                    <input type="radio" class="score__input" name="score" value="4">
+                                    <i class="score__label">
+                                        <i class="score__star">
+                                            <svg class="icon" viewBox="0 0 11 10">
+                                                <use href="img/sprites/sprite.svg#star_3"></use>
+                                            </svg>
+                                        </i>
+                                    </i>
+                                </label>
+                                <label class="score__item">
+                                    <input type="radio" class="score__input" name="score" value="5">
+                                    <i class="score__label">
+                                        <i class="score__star">
+                                            <svg class="icon" viewBox="0 0 11 10">
+                                                <use href="img/sprites/sprite.svg#star_3"></use>
+                                            </svg>
+                                        </i>
+                                    </i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="comment-new__item">
+                            <input type="text" class="field" name="name" placeholder="Введите ваше имя * ">
+                        </div>
+                        <div class="comment-new__item">
+                            <input type="text" class="field" name="email" placeholder="Введите свою электронную почту *">
+                        </div>
+                        <div class="comment-new__item">
+                            <textarea class="field" rows="3" name="message" placeholder="Оставьте свой отзыв *"></textarea>
+                        </div>
+                        <div class="comment-new__divider"></div>
+                        <div class="comment-new__button">
+                            <button type="button" class="btn btn-primary w-100">
+                                <span>Оставить отзыв</span>
+                                <i>
+                                    <svg class="ico-svg" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                        <div class="comment-new__policy">
+                            <label class="checkbox checkbox--md">
+                                <input type="checkbox" class="checkbox__input" name="policy" value="1" checked>
+                                <i class="checkbox__item"></i>
+                                <span class="checkbox__label">Нажимая на кнопку «Оставить отзыв» , я соглашаюсь с условиями <a href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

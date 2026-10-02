@@ -1,0 +1,510 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = 'Личный кабинет';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar/>
+
+        <Header/>
+
+        <Nav/>
+
+        <AppMenu/>
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="account">
+                    <div class="account__aside">
+                        <nav class="account-nav" data-account-nav>
+                            <button type="button" class="account-nav__toggle" data-account-nav-toggle>
+                                <span>Заказы</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 6 7">
+                                        <use href="img/sprites/sprite.svg#arrow_down_nav"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div class="account-nav__content">
+                                <div class="account-nav__menu">
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Мой профиль</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link active">
+                                            <span>Заказы</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Вишлист</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Персональная скидка</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <button type="button" class="account-nav__link">
+                                            <span>Выйти</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="account__main">
+                        <div class="account__label">Личный кабинет</div>
+                        <h1 class="account__header">Заказы</h1>
+
+                        <div class="orders">
+                            <div class="orders__header">
+                                <div class="orders__title">Номер заказа</div>
+                                <div class="orders__title">Дата заказа</div>
+                                <div class="orders__title">Статус заказа</div>
+                                <div class="orders__title">Сумма заказа</div>
+                                <div class="orders__title">Способ оплаты</div>
+                            </div>
+                            <div class="orders__body">
+
+                                <div class="order-item not-processed" data-spoiler>
+                                    <div class="order-item__header" data-spoiler-control>
+                                        <div class="order-item__value" data-title="Номер заказа">
+                                            <span>325</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Дата заказа">
+                                            <span>15.07.2026</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Статус заказа">
+                                            <span>Не обработан</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Сумма заказа">
+                                            <span>499,99 BYN</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Способ оплаты">
+                                            <span>Онлайн-оплата</span>
+                                        </div>
+                                        <div class="order-item__arrow">
+                                            <svg class="icon" viewBox="0 0 9 8">
+                                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="order-item__content"  data-spoiler-content>
+                                        <div class="order-item__wrapper">
+
+                                            <div class="order-comment">
+                                                <div class="order-comment__title">Комментарий</div>
+                                                <div class="order-comment__content">Код отслеживание по трек-номеру Европочты <strong>№44973-21</strong></div>
+                                            </div>
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__gift">
+                                                            <i>
+                                                                <svg class="icon" viewBox="0 0 11 10">
+                                                                    <use href="img/sprites/sprite.svg#icon_star"></use>
+                                                                </svg>
+                                                            </i>
+                                                            <span>Подарок</span>
+                                                        </div>
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+                                        </div>
+                                    </div>
+                                </div><!-- .order -->
+
+                                <div class="order-item processed" data-spoiler>
+                                    <div class="order-item__header" data-spoiler-control>
+                                        <div class="order-item__value" data-title="Номер заказа">
+                                            <span>325</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Дата заказа">
+                                            <span>15.07.2026</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Статус заказа">
+                                            <span class="color-green">Обработан</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Сумма заказа">
+                                            <span>499,99 BYN</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Способ оплаты">
+                                            <span>Онлайн-оплата</span>
+                                        </div>
+                                        <div class="order-item__arrow">
+                                            <svg class="icon" viewBox="0 0 9 8">
+                                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="order-item__content"  data-spoiler-content>
+                                        <div class="order-item__wrapper">
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__gift">
+                                                            <i>
+                                                                <svg class="icon" viewBox="0 0 11 10">
+                                                                    <use href="img/sprites/sprite.svg#icon_star"></use>
+                                                                </svg>
+                                                            </i>
+                                                            <span>Подарок</span>
+                                                        </div>
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+                                        </div>
+                                    </div>
+                                </div><!-- .order -->
+
+                                <div class="order-item processed" data-spoiler>
+                                    <div class="order-item__header" data-spoiler-control>
+                                        <div class="order-item__value" data-title="Номер заказа">
+                                            <span>325</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Дата заказа">
+                                            <span>15.07.2026</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Статус заказа">
+                                            <span class="color-green">Обработан</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Сумма заказа">
+                                            <span>499,99 BYN</span>
+                                        </div>
+                                        <div class="order-item__value" data-title="Способ оплаты">
+                                            <span>Онлайн-оплата</span>
+                                        </div>
+                                        <div class="order-item__arrow">
+                                            <svg class="icon" viewBox="0 0 9 8">
+                                                <use href="img/sprites/sprite.svg#btn_arrow_down"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="order-item__content"  data-spoiler-content>
+                                        <div class="order-item__wrapper">
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+
+                                            <div class="product-item">
+                                                <a href="#" class="product-item__media">
+                                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                                </a>
+                                                <div class="product-item__main">
+                                                    <div class="product-item__tags">
+                                                        <div class="product-item__gift">
+                                                            <i>
+                                                                <svg class="icon" viewBox="0 0 11 10">
+                                                                    <use href="img/sprites/sprite.svg#icon_star"></use>
+                                                                </svg>
+                                                            </i>
+                                                            <span>Подарок</span>
+                                                        </div>
+                                                        <div class="product-item__brand">Annbeauty</div>
+                                                    </div>
+                                                    <div class="product-item__title">
+                                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                                    </div>
+                                                    <div class="product-item__footer">
+                                                        <div class="product-item__prices">
+                                                            <div class="product-item__price-old">579,99 BYN</div>
+                                                            <div class="product-item__price">579,99 BYN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="product-item__favorite" data-add-favorite>
+                                                    <i>
+                                                        <svg class="img-cover" viewBox="0 0 16 15">
+                                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div><!-- .product-item -->
+                                        </div>
+                                    </div>
+                                </div><!-- .order -->
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- .account -->
+
+
+            </div>
+
+        </div>
+
+        <Footer/>
+
+        <TabBar/>
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>
+
+HNxL4RPGWLtHmz7s

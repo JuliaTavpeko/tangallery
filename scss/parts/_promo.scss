@@ -1,0 +1,210 @@
+@use '../utils' as *;
+
+.promo-slider {
+	position: relative;
+
+	&__wrapper {
+		margin: 0 rem(-4);
+	}
+
+	&__pagination {
+		margin-top: rem(10);
+	}
+
+	&__nav {
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 50;
+		display: none;
+		position: absolute;
+
+		&--prev {
+			right: 100%;
+			margin-right: rem(48);
+		}
+
+		&--next {
+			left: 100%;
+			margin-left: rem(48);
+		}
+	}
+
+	.swiper {
+		overflow: visible;
+	}
+
+	.swiper-slide {
+		width: rem(168);
+		padding: 0 rem(4);
+	}
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+		&__wrapper {
+			margin: 0 rem(-8);
+		}
+
+		&__pagination {
+			margin-top: rem(20);
+		}
+
+		.swiper-slide {
+			padding: 0 rem(8);
+			width: rem(240);
+		}
+	}
+
+	@include media-up('lg') {
+
+		&__wrapper {
+			margin: 0;
+		}
+
+		.swiper-slide {
+			padding: 0;
+			width: auto;
+		}
+	}
+
+	@include media-up('xl') {
+
+		&__wrapper {
+
+		}
+
+		&__pagination {
+			display: none;
+		}
+
+		.swiper {
+			overflow: hidden;
+			border-radius: rem(25);
+		}
+	}
+
+	@include media-up('xxl') {
+
+		&__nav {
+			display: block;
+		}
+	}
+
+}
+
+.promo-item {
+	color: black;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	border-radius: rem(20);
+
+	&--white {
+		color: white;
+	}
+
+	&__image {
+		display: block;
+		overflow: hidden;
+		border-radius: rem(20);
+		aspect-ratio: 160 / 220;
+	}
+
+	&__content {
+		top: rem(20);
+		left: 0;
+		right: 0;
+		z-index: 5;
+		text-align: center;
+		font-size: rem(10);
+		line-height: rem(11);
+		position: absolute;
+		padding: 0 rem(6);
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: rem(14);
+		margin-bottom: rem(6);
+	}
+
+	&__button {
+		left: 0;
+		right: 0;
+		bottom: rem(20);
+		z-index: 10;
+		padding: 0 rem(12);
+		position: absolute;
+
+		.btn {
+			width: 100%;
+		}
+	}
+
+	&__link {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 30;
+		display: block;
+		position: absolute;
+	}
+
+	@include media-up('md') {
+
+		&__image {
+			aspect-ratio: 288 / 400;
+		}
+
+		&__content {
+			font-size: rem(14);
+			line-height: rem(16);
+		}
+
+		&__title {
+			font-size: rem(18);
+			line-height: rem(20);
+		}
+	}
+
+	@include media-up('xl') {
+		border-radius: rem(25);
+
+		&__image {
+			border-radius: rem(25);
+			transform: scale(1);
+			transition: .3s;
+		}
+
+		&__content {
+			top: rem(20);
+			padding: 0 rem(20);
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&__title {
+			font-size: rem(24);
+			line-height: rem(28);
+			margin-bottom: rem(12);
+		}
+
+		&__button {
+			bottom: rem(20);
+			padding: 0 rem(20);
+		}
+
+		&:hover {
+
+			.promo-item__image {
+				transform: scale(1.15);
+				transition: .3s;
+			}
+		}
+	}
+}

@@ -1,0 +1,549 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+import { itemsCollections } from './layouts/collections.js';
+
+
+const title = 'Личный кабинет';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar/>
+
+        <Header/>
+
+        <Nav/>
+
+        <AppMenu/>
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="account">
+                    <div class="account__aside">
+                        <nav class="account-nav" data-account-nav>
+                            <button type="button" class="account-nav__toggle" data-account-nav-toggle>
+                                <span>Вишлист</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 6 7">
+                                        <use href="img/sprites/sprite.svg#arrow_down_nav"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div class="account-nav__content">
+                                <div class="account-nav__menu">
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Мой профиль</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link ">
+                                            <span>Заказы</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link active">
+                                            <span>Вишлист</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Персональная скидка</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <button type="button" class="account-nav__link">
+                                            <span>Выйти</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="account__main">
+                        <div class="account__label">Личный кабинет</div>
+                        <h1 class="account__header">Вишлист</h1>
+
+                        <div class="account__favorites">
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+                            <div class="product-item">
+                                <a href="#" class="product-item__media">
+                                    <img src="img/content/order_image.png" class="img-cover" alt="" loading="lazy">
+                                </a>
+                                <div class="product-item__main">
+                                    <div class="product-item__tags">
+                                        <div class="cart-item__tags">
+                                            <div class="cart-item__tags-row">
+                                                <div class="item-tag item-tag--sm item-tag--black"><span>New</span></div>
+                                                <div class="item-tag item-tag--sm item-tag--red"><span>-20%</span></div>
+                                            </div>
+                                            <div class="cart-item__brand">Annbeauty</div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item__title">
+                                        <a href="#">Маска-патчи для глаз 111SKIN Celestial Black Diamond Eye Mask</a>
+                                    </div>
+                                    <div class="product-item__footer">
+                                        <div class="product-item__prices">
+                                            <div class="product-item__price-old">579,99 BYN</div>
+                                            <div class="product-item__price">579,99 BYN</div>
+                                        </div>
+                                        <div class="product-item__button">
+                                            <div class="buy" data-buy>
+                                                <div class="buy__button">
+                                                    <button type="button" class="btn btn-md btn-primary" data-buy-button>
+                                                        <span>Купить</span>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 8 9">
+                                                                <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <div class="buy__quantity">
+                                                    <button class="buy__control" data-buy-control="minus">-</button>
+                                                    <div class="buy__input">
+                                                        <input type="number" class="buy__value" value="1" min="0" max="99" data-buy-value disabled>
+                                                    </div>
+                                                    <button class="buy__control" data-buy-control="plus">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-item__favorite added" data-add-favorite>
+                                    <i>
+                                        <svg class="icon" viewBox="0 0 16 15">
+                                            <use href="img/sprites/sprite.svg#heart"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .product-item -->
+                        </div>
+
+                    </div>
+                </div><!-- .account -->
+
+                <div class="account-section" data-collections>
+                    <div class="section-header">
+                        <div class="section-header__main">
+                            <div class="section-header__wrap">
+                                <h2 class="section-header__title title">Посмотрите также эти товары</h2>
+                                <div class="section-header__text">Подобрано специально для вас</div>
+                            </div>
+                        </div>
+                        <div class="section-header__control">
+                            <button type="button" class="btn-control" data-collections-prev>
+                                <i>
+                                    <svg class="img-cover" viewBox="0 0 13 19">
+                                        <use href="img/sprites/sprite.svg#nav_prev"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button type="button" class="btn-control" data-collections-next>
+                                <i>
+                                    <svg class="img-cover" viewBox="0 0 13 19">
+                                        <use href="img/sprites/sprite.svg#nav_next"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="compilation-slider">
+                        <div class="swiper" data-collections-slider>
+                            <div class="swiper-wrapper">
+                                {itemsCollections.map((item) => (
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="item__media">
+                                                    <a href={item.link} class="item__image">
+                                                        <img src={item.image} class="img-cover" width="576" height="560" loading="lazy">
+                                                    </a>
+
+                                                    {item.tags.length > 0 && (
+                                                            <div class="item__tags">
+                                                                {item.tags.map((tag) => (
+                                                                        <div class={`item-tag ${tag.class}`}>
+                                                                            <span>{tag.text}</span>
+                                                                        </div>
+                                                                ))}
+                                                            </div>
+                                                    )}
+
+                                                    <div class="item__button">
+                                                        <button type="button" class="btn btn-md btn-primary">
+                                                            <span>Купить</span>
+                                                            <i>
+                                                                <svg class="icon" viewBox="0 0 8 9">
+                                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                                </svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+
+                                                    <button type="button" class="item__favorite" data-add-favorite>
+                                                        <i>
+                                                            <svg class="icon" viewBox="0 0 16 15">
+                                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="item__content">
+                                                    <div class="item__brand">{item.brand}</div>
+
+                                                    <div class="item__title">
+                                                        <a href={item.link}>{item.title}</a>
+                                                    </div>
+
+                                                    <div class="item__prices">
+                                                        <div class="item__price-old">{item.priceOld}</div>
+                                                        <div class="item__price">{item.price}</div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .item -->
+                                        </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .section -->
+
+            </div>
+
+        </div>
+
+        <Footer/>
+
+        <TabBar/>
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>
+
+HNxL4RPGWLtHmz7s

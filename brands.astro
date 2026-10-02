@@ -1,0 +1,507 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = 'Бренды';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="abc-filter">
+                    <div class="swiper" data-abc>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item is-active" data-abc-item>Все</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>0-9</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>A</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>B</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>C</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>D</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>E</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>F</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>G</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>H</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>I</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>J</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>K</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>L</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>M</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>O</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>P</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>Q</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>R</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>S</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>T</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>W</button>
+                            </div>
+                            <div class="swiper-slide">
+                                <button type="button" class="abc-item" data-abc-item>Y</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brands">
+                    <div class="brands__aside">
+                        <h1 class="brands__header">{title}</h1>
+                        <div class="brands__favorite">
+                            <div class="brands__title">Избранное</div>
+                            <div class="brands__text">
+                                Нажимайте на сердечко рядом с названием бренда, чтобы в следующий раз быстро находить любимые товары.
+                            </div>
+                            <div class="brands__list">
+                                <div class="brands__item">
+                                    <button type="button" class="brand__favorite added" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                    <a href="#" class="brand__title">111SKIN</a>
+                                </div>
+                                <div class="brands__item">
+                                    <button type="button" class="brand__favorite added" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                    <a href="#" class="brand__title">111SKIN</a>
+                                </div>
+                                <div class="brands__item">
+                                    <button type="button" class="brand__favorite added" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                    <a href="#" class="brand__title">111SKIN</a>
+                                </div>
+                                <div class="brands__item">
+                                    <button type="button" class="brand__favorite added" data-add-favorite>
+                                        <i>
+                                            <svg class="icon" viewBox="0 0 16 15">
+                                                <use href="img/sprites/sprite.svg#heart"></use>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                    <a href="#" class="brand__title">111SKIN</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .brands__aside -->
+                    <div class="brands__main">
+                        <div class="brands__search">
+                            <form>
+                                <div class="search-form">
+                                    <input type="text" id="search" class="search-form__field" placeholder="Найти бренд">
+                                    <label class="search-form__icon" for="search">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <use href="img/sprites/sprite.svg#search_24"></use>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </form>
+                        </div><!-- .brands__search -->
+                        <div class="brands__content">
+                            <div class="brand">
+                                <div class="brand__header">0-9</div>
+                                <div class="brand__content">
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">111SKIN</a>
+                                            <div class="brand__tag">Новинки</div>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">2MOOD</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div><!-- .brand -->
+                            <div class="brand">
+                                <div class="brand__header">A</div>
+                                <div class="brand__content">
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Acca Kappa</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Adaline</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Allies of skin</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Augustinus Bader</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Arosha</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">AminuН</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">AminuН</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div><!-- .brand -->
+                            <div class="brand">
+                                <div class="brand__header">B</div>
+                                <div class="brand__content">
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Baobab Collection</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">BeautyBuzz</a>
+                                            <div class="brand__tag">Новинки</div>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Allies of skin</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Augustinus Bader</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Augustinus Bader</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Arosha</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">AminuН</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div><!-- .brand -->
+                            <div class="brand">
+                                <div class="brand__header">C</div>
+                                <div class="brand__content">
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Baobab Collection</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">BeautyBuzz</a>
+                                            <div class="brand__tag">Новинки</div>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Allies of skin</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Augustinus Bader</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Augustinus Bader</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">Arosha</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="brand__item">
+                                        <div class="brand__wrap">
+                                            <a href="#" class="brand__title">AminuН</a>
+                                        </div>
+                                        <button type="button" class="brand__favorite" data-add-favorite>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 16 15">
+                                                    <use href="img/sprites/sprite.svg#heart"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div><!-- .brand -->
+                        </div><!-- .brands__content -->
+                    </div><!-- .brands__main -->
+                </div><!-- .brands -->
+            </div>
+
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

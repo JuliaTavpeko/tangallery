@@ -1,0 +1,185 @@
+@use '../../utils/index' as *;
+
+.checkbox {
+    cursor: pointer;
+    font-size: rem(13);
+    line-height: rem(16);
+    font-weight: 500;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    column-gap: rem(10);
+
+    &__input {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked + .checkbox__item {
+
+            &:before {
+                border-color: var(--black);
+                background: var(--black);
+            }
+
+            &:after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:indeterminate + .checkbox__item {
+
+            &:before {
+                border-color: var(--black);
+                background: var(--black);
+            }
+
+            &:after {
+                width: 10px;
+                height: 2px;
+                background: white;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:disabled + .checkbox__item {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        &:disabled + .checkbox__item + .checkbox__label {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+
+    &__item {
+        width: rem(16);
+        height: rem(16);
+        border-radius: rem(2);
+        background: white;
+        position: relative;
+        border: 1px solid #ECECEC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &:after {
+            z-index: 5;
+            content: '';
+            width: 7px;
+            height: 6px;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNycgaGVpZ2h0PSc2JyB2aWV3Qm94PScwIDAgNyA2JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00wLjkxOTkyMiAyLjc5MzE4TDIuNDgwNzkgNC42NjY1OUw0LjA0MTY3IDIuNzkzMThMNS42MDI1NCAwLjkxOTc2OScgc3Ryb2tlPScjQzgxNTBEJyBzdHJva2Utd2lkdGg9JzEuODM5NTEnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPgo=");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0;
+            visibility: hidden;
+            flex-shrink: 0;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        color: var(--black);
+        position: relative;
+        display: inline-block;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    &--white {
+
+        a {
+            color: white;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    &--sm {
+        font-size: rem(10);
+        line-height: rem(12);
+
+        .checkbox__item {
+            width: rem(12);
+            height: rem(12);
+        }
+    }
+
+    &--md {
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(17);
+
+    }
+
+    @include media-up('md') {
+
+        &--sm {
+            font-size: rem(12);
+            line-height: rem(14);
+
+            .checkbox__item {
+                width: rem(14);
+                height: rem(14);
+            }
+        }
+
+        &--md {
+            font-size: rem(12);
+            line-height: rem(17);
+
+        }
+    }
+
+    @include media-up('xl') {
+        font-size: rem(16);
+        line-height: rem(18);
+
+        &__item {
+            width: rem(18);
+            height: rem(18);
+
+            &:after {
+                width: 11px;
+                height: 10px;
+            }
+        }
+
+        &--sm {
+            font-size: rem(14);
+            line-height: rem(20);
+
+            .checkbox__item {
+                top: 1px;
+                width: rem(18);
+                height: rem(18);
+            }
+        }
+
+        &--md {
+            font-size: rem(14);
+            line-height: rem(17);
+
+        }
+    }
+}

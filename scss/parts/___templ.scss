@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+.tmp {
+
+	@include media-up('sm') {
+
+	}
+
+	@include media-up('md') {
+
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}

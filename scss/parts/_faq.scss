@@ -1,0 +1,310 @@
+@use '../utils' as *;
+
+.faq-header {
+	margin: 0;
+	padding-top: rem(10);
+	padding-bottom: rem(20);
+	text-align: center;
+
+
+	@include media-up('md') {
+		padding-top: rem(20);
+		padding-bottom: rem(30);
+	}
+
+	@include media-up('xl') {
+		font-size: rem(36);
+		line-height: rem(40);
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+	}
+}
+
+.faq-control {
+	margin: 0 rem(-4) rem(30) rem(-4);
+
+	.swiper {
+		overflow: visible;
+	}
+
+	.swiper-slide {
+		width: auto;
+		padding: 0 rem(4);
+	}
+
+	@include media-up('md') {
+		margin: 0 0 rem(40) 0;
+
+		.swiper-slide {
+			padding: 0;
+		}
+	}
+
+	@include media-up('xl') {
+		margin-bottom: rem(50);
+	}
+}
+
+.faq-button {
+	height: rem(24);
+	min-width: rem(66);
+	cursor: pointer;
+	font-weight: 500;
+	font-size: rem(12);
+	line-height: rem(16);
+	border-radius: rem(5);
+	padding: rem(2) rem(10);
+	white-space: nowrap;
+	color: var(--c-black);
+	text-decoration: none;
+	background-color: white;
+	border: 1px solid var(--c-black);
+	transition: .3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		color: var(--c-black);
+		border-color: var(--c-black);
+	}
+
+	&.is-active {
+		color: white;
+		cursor: default;
+		border-color: var(--c-black);
+		background-color: var(--c-black);
+	}
+
+	@include media-up('md') {
+		height: rem(36);
+		font-size: rem(14);
+		line-height: rem(20);
+		border-radius: rem(10);
+		padding: rem(2) rem(15);
+		border-width: 2px;
+		color: #666666;
+		border-color: #666666;
+	}
+
+	@include media-up('xl') {
+		height: rem(45);
+		font-size: rem(16);
+		line-height: rem(20);
+		padding: rem(2) rem(21);
+
+		&:hover {
+			color: var(--c-black);
+			border-color: var(--c-black);
+		}
+
+		&.is-active {
+			color: white;
+			cursor: default;
+			border-color: var(--c-black);
+			background-color: var(--c-black);
+		}
+	}
+}
+
+.faq {
+
+	&__header {
+		margin-bottom: rem(16);
+		display: flex;
+		row-gap: rem(25);
+		flex-direction: column;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(22);
+		line-height: rem(26);
+		text-align: center;
+	}
+
+	&__text {
+
+	}
+
+	&__content {
+
+	}
+
+	@include media-up('md') {
+
+		&__header {
+			row-gap: rem(15);
+			margin-bottom: rem(30);
+		}
+
+		&__text {
+			text-align: center;
+		}
+	}
+
+	@include media-up('xl') {
+
+		&__header {
+
+		}
+
+		&__title {
+			font-size: rem(36);
+			line-height: rem(48);
+		}
+
+		&__text {
+			font-size: rem(16);
+
+		}
+	}
+}
+
+.qa-list {
+	border-top: 1px solid #ECECEC;
+	display: flex;
+	flex-direction: column;
+
+	@include media-up('md') {
+		row-gap: 0;
+	}
+}
+
+.qa {
+	border-bottom: 1px solid #ECECEC;
+
+	&__header {
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: rem(16);
+		color: var(--c-black);
+		cursor: pointer;
+		padding: rem(5) 0;
+		min-height: rem(40);
+		display: flex;
+		column-gap: rem(10);
+		align-items: center;
+		justify-content: space-between;
+		transition: var(--transition-time);
+
+		&:hover {
+		//	color: var(--c-red);
+		}
+	}
+
+	&__arrow {
+		width: rem(12);
+		height: rem(12);
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		flex-shrink: 0;
+		fill: none;
+		stroke: var(--c-black);
+		transform: rotate(0deg);
+		transition: var(--transition-time);
+	}
+
+	&__content {
+		font-size: rem(14);
+		line-height: rem(18);
+	}
+
+	&__wrapper {
+		max-width: rem(800);
+		padding-bottom: rem(14);
+	}
+
+	&.open {
+
+		.qa__header {
+			color: var(--c-red);
+		}
+
+		.qa__arrow {
+			transform: rotate(180deg);
+		}
+	}
+
+	@include media-up('md') {
+
+		&__header {
+			min-height: rem(50);
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&__arrow {
+			width: rem(20);
+			height: rem(20);
+		}
+	}
+
+	@include media-up('lg') {
+
+	}
+
+	@include media-up('xl') {
+		padding: rem(8) 0;
+
+		&__header {
+			font-size: rem(18);
+			line-height: rem(24);
+			min-height: rem(60);
+		}
+
+		&__arrow {
+			width: rem(24);
+			height: rem(24);
+		}
+
+		&__content {
+			font-size: rem(16);
+			line-height: rem(20);
+		}
+
+		&__wrapper {
+			max-width: rem(1000);
+			padding-bottom: rem(12);
+		}
+	}
+
+	@include media-up('xxl') {
+
+	}
+
+}
+
+.faq-info {
+	font-weight: 500;
+	font-size: rem(14);
+	line-height: rem(20);
+	margin-top: rem(30);
+	text-align: center;
+
+	&__title {
+		font-weight: 600;
+	}
+
+	a {
+		color: var(--c-red);
+		text-decoration: underline;
+
+		&:hover {
+			color: var(--c-red);
+			text-decoration: none;
+		}
+	}
+
+	@include media-up('md') {
+		font-size: rem(16);
+		line-height: rem(26);
+	}
+
+	@include media-up('xl') {
+		font-size: rem(20);
+		line-height: rem(30);
+		margin-top: rem(50);
+	}
+}

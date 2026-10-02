@@ -1,0 +1,81 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+import { faq } from './layouts/faq.js';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+
+const title = 'Оплата косметики';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar />
+
+        <Header />
+
+        <Nav />
+
+        <AppMenu />
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <h1 class="page-header">{title}</h1>
+
+                <div class="content">
+                    <h4>Онлайн-оплата</h4>
+                    <p>Оплата производится через интернет в режиме реального времени непосредственно после оформления заказа.</p>
+                    <p>Обработка платежа производится на программно-аппаратном комплексе системы электронных платежей с использованием защищенного протокола передачи данных на платежный сервер.</p>
+                    <p>Если карточка поддерживает технологию 3DSecure или Интернет-пароль для держателей карточек БЕЛКАРТ, Вы будете перенаправлены на страницу банка, выпустившего карточку, для ввода кода безопасности.</p>
+                    <p>Порядок проведения оплаты заказа банковской картой в сети интернет:</p>
+                    <ul>
+                        <li>Проверьте, предназначена ли банковская карта для оплаты в интернете (эту информацию предоставит Банк, выпустивший Вашу пластиковую карту).</li>
+                        <li>Добавьте интересующие Вас товары «В корзину» и нажмите кнопку «Оплатить заказ». В списке «Способы оплаты» выберите пункты «Онлайн-оплата». Заполните личные данные и данные по доставке и нажмите кнопку «Оплатить заказ». Ваш заказ поступит к нам в обработку, для оплаты товара нажмите кнопку «Оплатить».</li>
+                        <li>Интернет-магазин переадресует Вас на авторизационный сервер онлайн-платежей bePaid.</li>
+                    </ul>
+                    <p>В случае отказа клиента от товара денежные средства возвращаются в полном размере и без каких-либо комиссий. Срок возврата денежных средств на счет покупателя может составлять до 30 дней в зависимости от банка эмитента.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <Footer />
+
+        <TabBar />
+
+        <Cart />
+
+        <Modal />
+
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>

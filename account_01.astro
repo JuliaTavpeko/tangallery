@@ -1,0 +1,209 @@
+---
+import Layout from './layouts/layout.astro';
+
+import TopBar from './components/top-bar.astro';
+import Header from './components/header.astro';
+import Nav from './components/nav.astro';
+import Footer from './components/footer.astro';
+import AppMenu from './components/app-menu.astro';
+import TabBar from './components/tab-bar.astro';
+
+import Modal from './components/modal.astro';
+import Cart from './components/cart.astro';
+
+const title = 'Личный кабинет';
+---
+
+
+<Layout title={title}>
+
+    <Fragment slot="head">
+
+    </Fragment>
+
+    <main class="main">
+
+        <TopBar/>
+
+        <Header/>
+
+        <Nav/>
+
+        <AppMenu/>
+
+
+        <div class="main-page">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <span class="breadcrumb__active">{title}</span>
+                    </li>
+                </ol>
+
+                <div class="account">
+                    <div class="account__aside">
+                        <nav class="account-nav" data-account-nav>
+                            <button type="button" class="account-nav__toggle" data-account-nav-toggle>
+                                <span>Мой профиль</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 6 7">
+                                        <use href="img/sprites/sprite.svg#arrow_down_nav"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div class="account-nav__content">
+                                <div class="account-nav__menu">
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link active">
+                                            <span>Мой профиль</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Заказы</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Вишлист</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <a href="#" class="account-nav__link">
+                                            <span>Персональная скидка</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="account-nav__item">
+                                        <button type="button" class="account-nav__link">
+                                            <span>Выйти</span>
+                                            <i>
+                                                <svg class="icon" viewBox="0 0 8 9">
+                                                    <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="account__main">
+                        <div class="account__label">Личный кабинет</div>
+                        <h1 class="account__header">Данные</h1>
+
+                        <div class="account__form">
+                            <div class="account__field">
+                                <input type="text" class="field" name="lastName" placeholder="Фамилия">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="firstName" placeholder="Имя">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="secondName" placeholder="Отчество">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="email" placeholder="Email"
+                                       value="kira_s0_89@inbox.ru">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="phone" placeholder="Телефон">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="date" placeholder="Дата рождения">
+                            </div>
+                            <div class="account__field">
+                                <input type="password" class="field" name="password" placeholder="" value="********">
+                            </div>
+                            <div class="account__field">
+                                <input type="password" class="field" name="password2"
+                                       placeholder="Подтверждение нового параля">
+                            </div>
+                        </div>
+                        <div class="account__title">Адрес доставки</div>
+                        <div class="account__form">
+                            <div class="account__field">
+                                <input type="text" class="field" name="city" placeholder="Город">
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="street" placeholder="Улица">
+                            </div>
+                            <div class="account__form-row">
+                                <div class="account__field">
+                                    <input type="text" class="field" name="home" placeholder="Дом">
+                                </div>
+                                <div class="account__field">
+                                    <input type="text" class="field" name="flat" placeholder="Квартира">
+                                </div>
+                            </div>
+                            <div class="account__field">
+                                <input type="text" class="field" name="message" placeholder="Комментарий">
+                            </div>
+                        </div>
+                        <div class="account__divider"></div>
+                        <div class="account__submit">
+                            <button type="button" class="btn btn-primary">
+                                <span>Сохранить изменения</span>
+                                <i>
+                                    <svg class="icon" viewBox="0 0 8 9">
+                                        <use href="img/sprites/sprite.svg#btn_arrow"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                        <div class="account__policy">
+                            <div class="footer__policy">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="policy" checked>
+                                    <i class="checkbox__item"></i>
+                                    <span class="checkbox__label">Я даю согласие на получение информационных и рекламных рассылок через электронную почту и номер телефона.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- .account -->
+
+
+            </div>
+
+        </div>
+
+        <Footer/>
+
+        <TabBar/>
+
+        <Cart />
+
+        <Modal />
+    </main>
+
+    <Fragment slot="scripts">
+
+    </Fragment>
+
+</Layout>
+
+HNxL4RPGWLtHmz7s
